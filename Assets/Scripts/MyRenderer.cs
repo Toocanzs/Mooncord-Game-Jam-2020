@@ -66,12 +66,15 @@ public class MyRenderer : ScriptableRenderer
                 command.SetComputeIntParams(computeShader, "ProbeCounts", manager.ProbeCounts.x, manager.ProbeCounts.y);
                 command.SetComputeVectorParam(computeShader, "LightingOrigin", currentCameraPos.xyxy);
 
+                float2 randomProbeOffset = new float2(UnityEngine.Random.Range(-0.5f,0.5f), UnityEngine.Random.Range(-0.5f,0.5f));
+                command.SetComputeVectorParam(computeShader, "RandomProbeOffset", randomProbeOffset.xyxy);
+                
                 float goldenRatio = (1 + math.sqrt(5)) / 2;
                 float randomRayOffset = randomIndex * 2 * math.PI * (goldenRatio - 1);
                 command.SetComputeFloatParam(computeShader, "RandomRayOffset", randomRayOffset);
                 command.DispatchCompute(computeShader, raycastKernel, (manager.ProbeCounts.x + 63) / 64, manager.ProbeCounts.y, 1);
 
-                manager.TransferToFullscreenMaterial.SetVector("_Offset", new float4(0, 0, 0, 0));
+                manager.TransferToFullscreenMaterial.SetVector("_Offset", new float4(-randomProbeOffset / manager.ProbeCounts, 0, 0));
                 manager.TransferToFullscreenMaterial.SetTexture("_PreviousFullScreenTex", manager.LightingPerPixelBuffer.Current);
                 command.Blit(manager.LightingPerProbeBuffer, manager.LightingPerPixelBuffer.Other, manager.TransferToFullscreenMaterial);
                 manager.LightingPerPixelBuffer.Swap();
