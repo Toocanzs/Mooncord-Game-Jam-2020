@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoubleBuffer : MonoBehaviour
+public class DoubleBuffer
 {
     private RenderTexture A;
     private RenderTexture B;
