@@ -10,7 +10,8 @@ public class LightingManager : MonoBehaviour
 
     public int PixelsPerUnit = 32;
     public int2 ProbeCounts = new int2(50, 30);
-
+    public float2 followPercent = new float2(0.3f, 0.3f);
+    
     public RenderTexture WallBuffer;
     public RenderTexture LightingPerProbeBuffer;
     public DoubleBuffer LightingPerPixelBuffer;

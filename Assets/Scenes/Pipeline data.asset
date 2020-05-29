@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 6781d102adef4eb49ac6b7d473f3bdfc, type: 3}
   m_Name: Pipeline data
   m_EditorClassIdentifier: Assembly-CSharp::RendererData
   m_RendererFeatures: []

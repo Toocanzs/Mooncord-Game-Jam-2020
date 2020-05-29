@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Rendering;
@@ -16,12 +17,26 @@ public class MyRenderer : ScriptableRenderer
         RenderPipelineManager.beginFrameRendering += BeginFrameRendering;
     }
 
-    private void BeginFrameRendering(ScriptableRenderContext arg1, Camera[] arg2)
+    private float2 lastCameraPos;
+    private void BeginFrameRendering(ScriptableRenderContext context, Camera[] cameras)
     {
+        if (LightingManager.Instance != null)
+        {
+            float2 currentCameraPos = ((float3) LightingManager.Instance.lightingCamera.transform.position).xy;
+            
+            
+            lastCameraPos = ((float3)LightingManager.Instance.lightingCamera.transform.position).xy;
+        }
     }
 
-    private void BeginCameraRendering(ScriptableRenderContext arg1, Camera arg2)
+    private void BeginCameraRendering(ScriptableRenderContext context, Camera camera)
     {
+        var manager = LightingManager.Instance;
+        if (camera.TryGetComponent<LightingCameraTag>(out _) &&  manager != null)
+        {
+            
+        }
+
     }
 
     public override void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
@@ -78,7 +93,7 @@ public class Lighting2DPass : ScriptableRenderPass
             CoreUtils.SetRenderTarget(command, identifier, RenderBufferLoadAction.Load, RenderBufferStoreAction.Store, ClearFlag.All, Color.black);
             context.ExecuteCommandBuffer(command);
             context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref filteringSettings);
-        }//
+        }
 
         command.Release();
     }
