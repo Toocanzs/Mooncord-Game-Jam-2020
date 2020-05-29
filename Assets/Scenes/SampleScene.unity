@@ -4010,6 +4010,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightingCamera: {fileID: 1209884761}
+  PixelsPerUnit: 32
+  ProbeCounts:
+    x: 50
+    y: 30
+  LightingPerProbeBuffer: {fileID: 0}
+  LightingPerPixelBuffer: {fileID: 0}
 --- !u!114 &1209884760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4069,7 +4075,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256

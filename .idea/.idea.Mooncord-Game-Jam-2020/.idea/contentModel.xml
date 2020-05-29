@@ -11,8 +11,10 @@
           <e p="SpriteCutout.shader" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="DoubleBuffer.cs" t="Include" />
           <e p="LightingManager.cs" t="Include" />
           <e p="MyRenderer.cs" t="Include" />
+          <e p="RendererData.cs" t="Include" />
           <e p="Singleton.cs" t="Include" />
         </e>
       </e>

@@ -75,12 +75,3 @@ public class Lighting2DPass : ScriptableRenderPass
         command.Release();
     }
 }
-
-[CreateAssetMenu(fileName = "Pipeline data", menuName = "MyPipeline/data")]
-public class RendererData : ScriptableRendererData
-{
-    protected override ScriptableRenderer Create()
-    {
-        return new MyRenderer(this);
-    }
-}

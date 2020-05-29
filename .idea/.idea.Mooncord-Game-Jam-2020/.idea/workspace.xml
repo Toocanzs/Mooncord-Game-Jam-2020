@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/SpriteCutout.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/SpriteCutout.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Unlit_SpriteCutout.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Unlit_SpriteCutout.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Unlit_SpriteCutout.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Unlit_SpriteCutout.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LightingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LightingManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,10 +14,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/MyRenderer.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
+            <state relative-caret-position="-345">
               <caret line="38" column="93" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="93" />
               <folding>
                 <marker date="1590780843258" expanded="false" signature="6:198" ph="..." />
@@ -45,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Materials/SpriteCutout.shader">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+            <state relative-caret-position="-1135">
+              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
                 <marker date="1590781788716" expanded="true" signature="28:2362" ph="{...}" />
                 <marker date="1590781788716" expanded="true" signature="49:210" ph="{...}" />
@@ -76,32 +71,52 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/03/b39c8336/UniversalRenderPipelineAsset.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3358">
-              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="576">
+              <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
               <folding>
-                <marker date="1590782172615" expanded="false" signature="6:78" ph="..." />
-                <marker date="1590782172615" expanded="true" signature="137:252" ph="{...}" />
-                <marker date="1590782172615" expanded="true" signature="190:211" ph="{...}" />
-                <marker date="1590782172615" expanded="true" signature="229:250" ph="{...}" />
+                <marker date="1590783087478" expanded="true" signature="6:117" ph="..." />
+                <marker date="1590783087478" expanded="true" signature="176:1252" ph="{...}" />
+                <marker date="1590783087478" expanded="true" signature="411:948" ph="{...}" />
+                <marker date="1590783087478" expanded="true" signature="978:1074" ph="{...}" />
+                <marker date="1590783087478" expanded="true" signature="1098:1250" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/LightingCameraTag.cs">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/DoubleBuffer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="452">
+              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+              <folding>
+                <marker date="1590782926507" expanded="true" signature="6:78" ph="..." />
+                <marker date="1590782926507" expanded="true" signature="121:932" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="250:294" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="318:358" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="393:519" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="411:513" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="545:597" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="634:742" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="652:736" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="769:823" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="869:930" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="977:1099" ph="{...}" />
+                <marker date="1590782926507" expanded="true" signature="1048:1097" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/03/b39c8336/UniversalRenderPipelineAsset.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -122,12 +137,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MyRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/ef/a2375680/RenderPipelineAsset.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/a5/f8545f95/Renderer2DData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DoubleBuffer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/03/b39c8336/UniversalRenderPipelineAsset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/0f/1882bbfd/ScriptableRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/eb/01c699c8/Renderer2D.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/LightingCameraTag.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LightingCameraTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/fc/db211764/Render2DLightingPass.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteCutout.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -139,6 +155,8 @@
         <option value="$PROJECT_DIR$/Assets/Materials/SpriteCutout.shader" />
         <option value="$PROJECT_DIR$/Assets/LightingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/LightingCameraTag.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DoubleBuffer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LightingManager.cs" />
       </list>
     </option>
@@ -219,12 +237,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590778888490</updated>
-      <workItem from="1590778890383" duration="3298000" />
+      <workItem from="1590778890383" duration="4333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3298000" />
+    <option name="totallyTimeSpent" value="4333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,10 +346,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/ef/a2375680/RenderPipelineAsset.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/a5/f8545f95/Renderer2DData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Singleton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="18" />
+          <folding>
+            <marker date="1590782131232" expanded="true" signature="6:92" ph="..." />
+            <marker date="1590782131232" expanded="true" signature="135:446" ph="{...}" />
+            <marker date="1590782131232" expanded="true" signature="211:444" ph="{...}" />
+            <marker date="1590782131232" expanded="true" signature="247:412" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Materials/SpriteCutout.shader">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+        <state relative-caret-position="-1135">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding>
             <marker date="1590781788716" expanded="true" signature="28:2362" ph="{...}" />
             <marker date="1590781788716" expanded="true" signature="49:210" ph="{...}" />
@@ -344,9 +389,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/03/b39c8336/UniversalRenderPipelineAsset.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/LightingCameraTag.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding>
+            <marker date="1590782194479" expanded="false" signature="6:78" ph="..." />
+            <marker date="1590782194479" expanded="true" signature="126:130" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/DoubleBuffer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding>
+            <marker date="1590782926507" expanded="true" signature="6:78" ph="..." />
+            <marker date="1590782926507" expanded="true" signature="121:932" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="250:294" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="318:358" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="393:519" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="411:513" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="545:597" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="634:742" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="652:736" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="769:823" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="869:930" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="977:1099" ph="{...}" />
+            <marker date="1590782926507" expanded="true" signature="1048:1097" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="37" column="68" lean-forward="true" selection-start-line="37" selection-start-column="68" selection-end-line="37" selection-end-column="68" />
+          <folding>
+            <marker date="1590783087478" expanded="true" signature="6:117" ph="..." />
+            <marker date="1590783087478" expanded="true" signature="176:1252" ph="{...}" />
+            <marker date="1590783087478" expanded="true" signature="411:948" ph="{...}" />
+            <marker date="1590783087478" expanded="true" signature="978:1074" ph="{...}" />
+            <marker date="1590783087478" expanded="true" signature="1098:1250" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/MyRenderer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="-345">
           <caret line="38" column="93" selection-start-line="38" selection-start-column="83" selection-end-line="38" selection-end-column="93" />
           <folding>
             <marker date="1590780843258" expanded="false" signature="6:198" ph="..." />
@@ -364,56 +463,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/ef/a2375680/RenderPipelineAsset.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/a5/f8545f95/Renderer2DData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/03/b39c8336/UniversalRenderPipelineAsset.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3358">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Singleton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <marker date="1590782131232" expanded="true" signature="6:92" ph="..." />
-            <marker date="1590782131232" expanded="true" signature="135:446" ph="{...}" />
-            <marker date="1590782131232" expanded="true" signature="211:444" ph="{...}" />
-            <marker date="1590782131232" expanded="true" signature="247:412" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <marker date="1590782172615" expanded="false" signature="6:78" ph="..." />
-            <marker date="1590782172615" expanded="true" signature="137:252" ph="{...}" />
-            <marker date="1590782172615" expanded="true" signature="190:211" ph="{...}" />
-            <marker date="1590782172615" expanded="true" signature="229:250" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/LightingCameraTag.cs">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
