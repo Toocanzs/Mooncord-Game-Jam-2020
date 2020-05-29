@@ -78,7 +78,7 @@ public class Lighting2DPass : ScriptableRenderPass
             CoreUtils.SetRenderTarget(command, identifier, RenderBufferLoadAction.Load, RenderBufferStoreAction.Store, ClearFlag.All, Color.black);
             context.ExecuteCommandBuffer(command);
             context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref filteringSettings);
-        }
+        }//
 
         command.Release();
     }
