@@ -23,11 +23,11 @@ public class LightingManager : MonoBehaviour
 
     public float hysteresis = 4;
 
-    public virtual void Awake()
+    public void Awake()
     {
         if (Instance != null)
         {
-            Destroy(this);
+            Destroy(gameObject);
             Debug.LogError($"Two instances of {this} found. This is supposed to be a singleton");
             return;
         }
