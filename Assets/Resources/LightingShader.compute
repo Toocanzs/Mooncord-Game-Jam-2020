@@ -1,0 +1,82 @@
+﻿#pragma kernel LightingRaycast
+Texture2D<float4> WallBuffer;
+RWTexture2D<float4> LightingPerProbeBuffer;
+int RayCount;
+
+float2 LightingOrigin;
+int PixelsPerUnit;
+int2 ProbeCounts;
+float RandomRayOffset;
+
+#define MAX_RAY_LENGTH 256
+#define PI 3.14159265359
+
+struct RaycastResult
+{
+    float2 endPos;
+    float4 color;
+    bool hit;
+};
+
+RaycastResult raycast(float2 origin, float2 dir)
+{
+    RaycastResult result;
+    result.endPos = 0;
+    result.hit = false;
+    result.color = 0;
+    if(abs(dir.x) > abs(dir.y))
+    {
+        dir /= abs(dir.x);
+        dir.x = sign(dir.x);
+    }
+    else
+    {
+        dir /= abs(dir.y);
+        dir.y = sign(dir.y);
+    }
+    
+    float2 pos = 0;
+    for(int i = 0; i < MAX_RAY_LENGTH; i++)
+    {
+        float2 samplePos = origin + pos;
+        //if(any(bool4(samplePos < 0, samplePos > ProbeCounts * PixelsPerUnit)))
+        //    return result;
+        float4 test = WallBuffer[uint2(samplePos)];
+        if(test.a >= 1)
+        {
+            result.color = test;
+            result.hit = true;
+            return result;
+        }
+    
+        pos += dir;
+        result.endPos = pos;
+    }
+    
+    return result;
+}
+[numthreads(64,1,1)]
+void LightingRaycast (uint3 id : SV_DispatchThreadID)
+{
+    float2 wsRayOrigin = LightingOrigin + id.xy * PixelsPerUnit;
+    float2 textureSpaceOrigin = id.xy * PixelsPerUnit;
+
+
+    float3 sum = 0;
+    for(int rayIndex = 0; rayIndex < RayCount; rayIndex++)
+    {
+        float angle = 2.0 * PI * (float(rayIndex)/RayCount) + RandomRayOffset;
+        float s,c;
+        sincos(angle, s, c);
+        float2 dir = float2(c,s);
+        //dir *= float(ProbeCounts.x) / ProbeCounts.y;
+        //dir = normalize(dir);
+        RaycastResult result = raycast(textureSpaceOrigin, dir);
+        if(result.hit)
+        {
+            sum += result.color.rgb;
+        }
+    }
+    
+    LightingPerProbeBuffer[id.xy] = float4(sum / RayCount,1);
+}

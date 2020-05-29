@@ -9,17 +9,30 @@
         <e p="LightingCameraTag.cs" t="Include" />
         <e p="Materials" t="Include">
           <e p="SpriteCutout.shader" t="Include" />
+          <e p="TransferToFullscreen.shader" t="Include" />
+          <e p="TransferValidData.shader" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="LightingShader.compute" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="DoubleBuffer.cs" t="Include" />
           <e p="Entities" t="Include">
             <e p="HealthComponent.cs" t="Include" />
+            <e p="HealthPickup.cs" t="Include" />
+            <e p="Pickupable.cs" t="Include" />
+            <e p="PlayerCharacter.cs" t="Include" />
             <e p="PlayerInventory.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+            <e p="WeaponComponent.cs" t="Include" />
           </e>
           <e p="LightingManager.cs" t="Include" />
           <e p="MyRenderer.cs" t="Include" />
           <e p="RendererData.cs" t="Include" />
+          <e p="Room.cs" t="Include" />
+          <e p="RoomExit.cs" t="Include" />
+          <e p="RoomManager.cs" t="Include" />
+          <e p="Weapon.cs" t="Include" />
         </e>
       </e>
       <e p="Mooncord-Game-Jam-2020.sln" t="IncludeFlat" />

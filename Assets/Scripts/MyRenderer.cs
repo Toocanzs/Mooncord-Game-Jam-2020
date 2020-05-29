@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -10,33 +11,85 @@ public class MyRenderer : ScriptableRenderer
 {
     public Lighting2DPass Lighting2DPass;
 
+    private static ComputeShader computeShader = Resources.Load<ComputeShader>("LightingShader");
+    private int raycastKernel = computeShader.FindKernel("LightingRaycast");
+
+    private int randomIndex = 0;
+
     public MyRenderer(ScriptableRendererData data) : base(data)
     {
         Lighting2DPass = new Lighting2DPass();
         RenderPipelineManager.beginCameraRendering += BeginCameraRendering;
         RenderPipelineManager.beginFrameRendering += BeginFrameRendering;
+        if (computeShader == null)
+            Debug.LogError("Unable to load compute shader");
     }
 
-    private float2 lastCameraPos;
     private void BeginFrameRendering(ScriptableRenderContext context, Camera[] cameras)
     {
-        if (LightingManager.Instance != null)
+        var manager = LightingManager.Instance;
+        if (manager != null)
         {
-            float2 currentCameraPos = ((float3) LightingManager.Instance.lightingCamera.transform.position).xy;
-            
-            
-            lastCameraPos = ((float3)LightingManager.Instance.lightingCamera.transform.position).xy;
+            Shader.SetGlobalFloat("hysteresis", Time.deltaTime * LightingManager.Instance.hysteresis);
         }
     }
 
     private void BeginCameraRendering(ScriptableRenderContext context, Camera camera)
     {
         var manager = LightingManager.Instance;
-        if (camera.TryGetComponent<LightingCameraTag>(out _) &&  manager != null)
+        var command = CommandBufferPool.Get("2dLighting");
+        command.Clear();
+        if (manager != null)
         {
-            
+            if (camera.TryGetComponent<LightingCameraTag>(out _))
+            {
+                float2 lastCameraPos = ((float3) LightingManager.Instance.lightingCamera.transform.position).xy;
+                bool moved = LightingManager.Instance.UpdateCameraPos();
+                float2 currentCameraPos = ((float3) LightingManager.Instance.lightingCamera.transform.position).xy;
+                
+                if (moved)
+                {
+                    float2 difference = currentCameraPos - lastCameraPos;
+                    float2 offset = difference / (manager.ProbeCounts);
+                    manager.TransferValidDataMaterial.SetVector("_Offset", offset.xyxy);
+                    command.Blit(manager.LightingPerPixelBuffer.Current, manager.LightingPerPixelBuffer.Other, manager.TransferValidDataMaterial);
+                    manager.LightingPerPixelBuffer.Swap();
+                }
+
+                
+
+                command.SetComputeTextureParam(computeShader, raycastKernel, "WallBuffer", manager.WallBuffer);
+                command.SetComputeTextureParam(computeShader, raycastKernel, "LightingPerProbeBuffer", manager.LightingPerProbeBuffer);
+
+                command.SetComputeIntParam(computeShader, "RayCount", manager.RayCount);
+                command.SetComputeIntParam(computeShader, "PixelsPerUnit", manager.PixelsPerUnit);
+                command.SetComputeIntParams(computeShader, "ProbeCounts", manager.ProbeCounts.x, manager.ProbeCounts.y);
+                command.SetComputeVectorParam(computeShader, "LightingOrigin", currentCameraPos.xyxy);
+
+                float goldenRatio = (1 + math.sqrt(5)) / 2;
+                float randomRayOffset = randomIndex * 2 * math.PI * (goldenRatio - 1);
+                command.SetComputeFloatParam(computeShader, "RandomRayOffset", randomRayOffset);
+                command.DispatchCompute(computeShader, raycastKernel, (manager.ProbeCounts.x + 63) / 64, manager.ProbeCounts.y, 1);
+
+                manager.TransferToFullscreenMaterial.SetVector("_Offset", new float4(0, 0, 0, 0));
+                manager.TransferToFullscreenMaterial.SetTexture("_PreviousFullScreenTex", manager.LightingPerPixelBuffer.Current);
+                command.Blit(manager.LightingPerProbeBuffer, manager.LightingPerPixelBuffer.Other, manager.TransferToFullscreenMaterial);
+                manager.LightingPerPixelBuffer.Swap();
+
+                randomIndex += 4;
+            }
+            else
+            {
+                command.SetGlobalVector("LightingOrigin", LightingManager.Instance.getBottomLeft().xyxy);
+                command.SetGlobalInt("PixelsPerUnit", manager.PixelsPerUnit);    
+                command.SetGlobalVector("ProbeCounts", (float4)manager.ProbeCounts.xyxy);           
+                command.SetGlobalTexture("_LightTexture", manager.LightingPerPixelBuffer.Current);
+            }
         }
 
+
+        context.ExecuteCommandBuffer(command);
+        command.Release();
     }
 
     public override void Setup(ScriptableRenderContext context, ref RenderingData renderingData)
@@ -90,7 +143,7 @@ public class Lighting2DPass : ScriptableRenderPass
             short lowerBound = i == 0 ? short.MinValue : layerValue;
             short upperBound = i == sortingLayers.Length - 1 ? short.MaxValue : layerValue;
             filteringSettings.sortingLayerRange = new SortingLayerRange(lowerBound, upperBound);
-            CoreUtils.SetRenderTarget(command, identifier, RenderBufferLoadAction.Load, RenderBufferStoreAction.Store, ClearFlag.All, Color.black);
+            CoreUtils.SetRenderTarget(command, identifier, RenderBufferLoadAction.Load, RenderBufferStoreAction.Store, ClearFlag.All, Color.clear);
             context.ExecuteCommandBuffer(command);
             context.DrawRenderers(renderingData.cullResults, ref drawingSettings, ref filteringSettings);
         }

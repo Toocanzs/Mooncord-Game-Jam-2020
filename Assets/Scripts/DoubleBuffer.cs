@@ -13,6 +13,11 @@ public class DoubleBuffer
     {
         get => swapped ? A : B;
     }
+    
+    public RenderTexture Other
+    {
+        get => swapped ? B : A;
+    }
 
     public void Swap()
     {
