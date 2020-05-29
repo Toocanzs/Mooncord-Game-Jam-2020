@@ -18,7 +18,6 @@
           <e p="LightingManager.cs" t="Include" />
           <e p="MyRenderer.cs" t="Include" />
           <e p="RendererData.cs" t="Include" />
-          <e p="Singleton.cs" t="Include" />
         </e>
       </e>
       <e p="Mooncord-Game-Jam-2020.sln" t="IncludeFlat" />

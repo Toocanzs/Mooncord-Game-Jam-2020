@@ -57,6 +57,14 @@ public class Lighting2DPass : ScriptableRenderPass
         var identifier = colorAttachment;
         var tags = nonLightTags;
 
+        var manager = LightingManager.Instance;
+
+        if (camera.TryGetComponent<LightingCameraTag>(out _) && manager != null)
+        {
+            identifier = manager.WallBuffer;
+            tags = lightTags;
+        }
+
         var command = CommandBufferPool.Get("2dLighting");
         command.Clear();
         var drawingSettings = CreateDrawingSettings(tags, ref renderingData, SortingCriteria.CommonTransparent);
