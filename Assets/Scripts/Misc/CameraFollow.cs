@@ -21,6 +21,8 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
+        if (!target_transform)
+            return;
         transform.position = target_transform.position;
     }
 
@@ -31,6 +33,8 @@ public class CameraFollow : MonoBehaviour
 
     private void TrackTarget()
     {
+        if (!target_transform)
+            return;
         Vector2 targetPos = new Vector2(target_transform.position.x, target_transform.position.y);
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
