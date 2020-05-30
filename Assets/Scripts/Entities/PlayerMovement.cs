@@ -14,18 +14,26 @@ public class PlayerMovement : MonoBehaviour
     private float dash_cooldown_remaining;
     private float dash_active_time_remaining;
     private Vector2 dash_direction;
+    private Vector3 default_weapon_transform_position;
 
     void Start()
     {
         rigid_body = GetComponent<Rigidbody2D>();
         character_sprite = GetComponent<SpriteRenderer>();
+        var weapon_transform = transform.Find("weapon_position");
+        if (!weapon_transform) {
+            Debug.LogError("Unable to find weapon position transform");
+        } else {
+            default_weapon_transform_position = weapon_transform.localPosition;
+        }
+
     }
 
     void FixedUpdate()
     {
         UpdateMovement();
         SetSpriteFacing();
-
+        SetWeaponTransform();
     }
 
     private void UpdateMovement() {
@@ -57,6 +65,18 @@ public class PlayerMovement : MonoBehaviour
         }
         if(axis_vertical > 0f) {
 
+        }
+    }
+    private void SetWeaponTransform() {
+        var weapon_transform = transform.Find("weapon_position");
+        var flipped_position = default_weapon_transform_position;
+        if (character_sprite.flipX) {
+            flipped_position.x = -flipped_position.x;
+        }
+        if (!weapon_transform) {
+            Debug.LogError("Unable to find weapon position transform");
+        } else {
+            weapon_transform.localPosition = flipped_position;
         }
     }
 }

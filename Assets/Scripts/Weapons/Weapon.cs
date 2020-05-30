@@ -14,7 +14,7 @@ public abstract class Weapon : MonoBehaviour
     protected int current_ammo;
     protected GameObject owner;
 
-    void Update()
+    protected virtual void Update()
     {
         fire_cooldown_remaining = Math.Max(fire_cooldown_remaining - Time.deltaTime, 0f);
     }
