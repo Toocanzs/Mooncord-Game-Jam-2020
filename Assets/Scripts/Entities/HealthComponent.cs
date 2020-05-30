@@ -11,10 +11,10 @@ public class HealthComponent : MonoBehaviour
         get { return current_health; }
     }
 
-    void Start()
-    {
+    private void Awake() {
         current_health = max_health;
     }
+
 
     public void ChangeHealth(float value) {
         //Debug.Log("health changed by " + value);

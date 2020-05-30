@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7574484345599373825}
   - component: {fileID: 7574484345599373826}
   - component: {fileID: 7574484345599373827}
-  - component: {fileID: 7574484345599373828}
   - component: {fileID: 7574484345599373829}
   m_Layer: 0
   m_Name: P_HealthPickup_01
@@ -100,19 +99,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &7574484345599373828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7574484345599373830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38973a8411b2e034eb4e460047ee45c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroy_owner_on_pickup: 1
 --- !u!114 &7574484345599373829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,4 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b4c4021f3afde4d8891e3fa35891a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroy_owner_on_pickup: 1
   health_amount: 100

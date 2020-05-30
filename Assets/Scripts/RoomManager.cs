@@ -5,37 +5,45 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public List<Room> rooms = new List<Room>();
+    public List<GameObject> room_prefabs = new List<GameObject>();
+    private Room active_room_instance;
+    private int current_room_index;
     private static RoomManager instance;
 
     private void Awake() {
+        DontDestroyOnLoad(this.gameObject);
         if(instance == null) {
             instance = this;
         }
-        // @TEMP:
-        rooms = Object.FindObjectsOfType<Room>().ToList();
     }
 
     void Start()
     {
-        if(rooms.Count == 0) {
+        if(room_prefabs.Count == 0) {
             Debug.LogWarning("Please assign some Rooms to the RoomManager!");
+            return;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // @TEMP for now, just spawn the first room
+        CreateNextRoom();
     }
 
     public static Room GetActiveRoom() {
-        return instance.rooms.Count != 0 ? instance.rooms[0] : null;
+        return instance.active_room_instance;
     }
 
     public static void ExitCurrentRoom() {
-        if(instance.rooms.Count > 0) {
-            instance.rooms.RemoveAt(0);
+        Destroy(instance.active_room_instance.gameObject);
+        instance.current_room_index++;
+        CreateNextRoom();
+    }
+
+    private static void CreateNextRoom() {
+        if(instance.room_prefabs.Count > instance.current_room_index) {
+            var room_instance = Instantiate(instance.room_prefabs[instance.current_room_index]);
+            var room_component = room_instance.GetComponent<Room>();
+            room_component.ActivateRoom();
+            instance.active_room_instance = room_component;
         }
+
     }
 }
