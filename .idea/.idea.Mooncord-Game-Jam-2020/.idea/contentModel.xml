@@ -25,7 +25,6 @@
             <e p="PlayerCharacter.cs" t="Include" />
             <e p="PlayerInventory.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
-            <e p="WeaponComponent.cs" t="Include" />
           </e>
           <e p="LightingManager.cs" t="Include" />
           <e p="MyRenderer.cs" t="Include" />
@@ -34,7 +33,14 @@
           <e p="Room.cs" t="Include" />
           <e p="RoomExit.cs" t="Include" />
           <e p="RoomManager.cs" t="Include" />
-          <e p="Weapon.cs" t="Include" />
+          <e p="TeamComponent.cs" t="Include" />
+          <e p="Weapons" t="Include">
+            <e p="SimpleProjectile.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+            <e p="WeaponComponent.cs" t="Include" />
+            <e p="WeaponProjectile.cs" t="Include" />
+            <e p="WeaponSyringe.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Mooncord-Game-Jam-2020.sln" t="IncludeFlat" />
