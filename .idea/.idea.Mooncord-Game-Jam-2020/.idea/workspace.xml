@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/test light.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/test light.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,24 +123,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="368">
+              <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
               <folding>
-                <marker date="1590812366387" expanded="false" signature="6:78" ph="..." />
-                <marker date="1590812366387" expanded="true" signature="121:1068" ph="{...}" />
-                <marker date="1590812366387" expanded="true" signature="234:333" ph="/* private Vector3 finalTarget; ... */" />
-                <marker date="1590812366387" expanded="true" signature="379:421" ph="{...}" />
-                <marker date="1590812366387" expanded="true" signature="449:484" ph="{...}" />
-                <marker date="1590812366387" expanded="true" signature="516:1065" ph="{...}" />
+                <marker date="1590812813288" expanded="false" signature="6:78" ph="..." />
+                <marker date="1590812813288" expanded="true" signature="121:1068" ph="{...}" />
+                <marker date="1590812813288" expanded="true" signature="234:333" ph="/* private Vector3 finalTarget; ... */" />
+                <marker date="1590812813288" expanded="true" signature="379:421" ph="{...}" />
+                <marker date="1590812813288" expanded="true" signature="449:484" ph="{...}" />
+                <marker date="1590812813288" expanded="true" signature="516:1065" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Entities/PlayerMovement.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="284">
@@ -211,6 +209,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DoubleBuffer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/TransferToFullscreen.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/0f/1882bbfd/ScriptableRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSyringe.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/eb/01c699c8/Renderer2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Desktop/built in shaders/Editor/StandardShaderGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
@@ -338,12 +338,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590778888490</updated>
-      <workItem from="1590778890383" duration="32810000" />
+      <workItem from="1590778890383" duration="33062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32810000" />
+    <option name="totallyTimeSpent" value="33062000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -356,6 +356,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24986681" />
@@ -956,17 +957,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponProjectile.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="-382">
           <folding>
-            <marker date="1590812366387" expanded="false" signature="6:78" ph="..." />
-            <marker date="1590812366387" expanded="true" signature="121:1068" ph="{...}" />
-            <marker date="1590812366387" expanded="true" signature="234:333" ph="/* private Vector3 finalTarget; ... */" />
-            <marker date="1590812366387" expanded="true" signature="379:421" ph="{...}" />
-            <marker date="1590812366387" expanded="true" signature="449:484" ph="{...}" />
-            <marker date="1590812366387" expanded="true" signature="516:1065" ph="{...}" />
+            <marker date="1590805446165" expanded="false" signature="6:150" ph="..." />
+            <marker date="1590805446165" expanded="true" signature="193:248" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="304:2348" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="572:805" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="700:799" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="838:997" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="848:991" ph="/* if(velocity_change_amount.x &gt; 0f || velocity_change_amount.y &gt; 0f) { ... */" />
+            <marker date="1590805446165" expanded="true" signature="1076:1183" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="1251:2203" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="1380:1838" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="1417:1537" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="1682:1814" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="1961:2097" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="2033:2083" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="2145:2187" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="2242:2345" ph="{...}" />
+            <marker date="1590805446165" expanded="true" signature="2252:2305" ph="/* @TODO: do whatever here... ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponSyringe.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1590797646379" expanded="false" signature="6:78" ph="..." />
+            <marker date="1590797646379" expanded="true" signature="115:1332" ph="{...}" />
+            <marker date="1590797646379" expanded="true" signature="153:1329" ph="{...}" />
+            <marker date="1590797646379" expanded="true" signature="201:288" ph="{...}" />
+            <marker date="1590797646379" expanded="true" signature="454:538" ph="{...}" />
+            <marker date="1590797646379" expanded="true" signature="751:877" ph="{...}" />
+            <marker date="1590797646379" expanded="true" signature="985:1076" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -987,6 +1013,21 @@
             <marker date="1590783382918" expanded="true" signature="1838:1893" ph="{...}" />
             <marker date="1590783382918" expanded="true" signature="1924:1978" ph="{...}" />
             <marker date="1590783382918" expanded="true" signature="2010:2022" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <marker date="1590812813288" expanded="false" signature="6:78" ph="..." />
+            <marker date="1590812813288" expanded="true" signature="121:1068" ph="{...}" />
+            <marker date="1590812813288" expanded="true" signature="234:333" ph="/* private Vector3 finalTarget; ... */" />
+            <marker date="1590812813288" expanded="true" signature="379:421" ph="{...}" />
+            <marker date="1590812813288" expanded="true" signature="449:484" ph="{...}" />
+            <marker date="1590812813288" expanded="true" signature="516:1065" ph="{...}" />
           </folding>
         </state>
       </provider>
