@@ -30,12 +30,14 @@
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+                float4 color : COLOR;
             };
 
             struct v2f
             {
                 float2 uv : TEXCOORD0;
                 float2 worldPos : TEXCOORD1;
+                float4 color : COLOR;
                 float4 vertex : SV_POSITION;
             };
 
@@ -56,6 +58,7 @@
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xy;
+                o.color = v.color;
                 return o;
             }
             
@@ -67,8 +70,9 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
+                col.a *= i.color.a;
                 clip(col.a - _Cutout);
-                col.rgb *= tex2D(_LightTexture, getLightUv(i.worldPos));
+                col.rgb *= tex2D(_LightTexture, getLightUv(i.worldPos)) * i.color;
                 col.rgb *= _TintColor;
                 col.rgb += _AdditiveColor;
                 return col;
