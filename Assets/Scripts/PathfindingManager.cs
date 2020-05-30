@@ -73,7 +73,7 @@ public class PathfindingManager : MonoBehaviour
             //update data
             var currentData = probeData[testIndex];
             currentData.occupied = occupied;
-            probeData[testIndex] = currentData;
+            probeData[testIndex] = currentData; 
 
             testIndex = (testIndex + 1) % lightingManager.totalProbes;
         }

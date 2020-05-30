@@ -10,6 +10,7 @@
         <e p="Materials" t="Include">
           <e p="SpriteCutout.shader" t="Include" />
           <e p="SpriteTransparent.shader" t="Include" />
+          <e p="SpriteUnlit.shader" t="Include" />
           <e p="TransferToFullscreen.shader" t="Include" />
           <e p="TransferValidData.shader" t="Include" />
         </e>
