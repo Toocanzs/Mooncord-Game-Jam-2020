@@ -6,6 +6,10 @@
         _Cutout("Cutout", float) = 0.5
         [HDR]
         _Emission("Emission Color", Color) = (0,0,0,1)
+        [HDR]
+        _AdditiveColor("Additive Color", Color) = (0,0,0,1)
+        [HDR]
+        _TintColor("Tint Color", Color) = (1,1,1,1)
         [Toggle]
         _IsALight("Is A Light Or Wall", int) = 0
     }
@@ -42,6 +46,9 @@
             float2 LightingOrigin;
             int2 ProbeCounts;
             int PixelsPerUnit;
+            
+            float3 _TintColor;
+            float3 _AdditiveColor;
 
             v2f vert (appdata v)
             {
@@ -62,6 +69,8 @@
                 fixed4 col = tex2D(_MainTex, i.uv);
                 clip(col.a - _Cutout);
                 col.rgb *= tex2D(_LightTexture, getLightUv(i.worldPos));
+                col.rgb *= _TintColor;
+                col.rgb += _AdditiveColor;
                 return col;
             }
             ENDCG

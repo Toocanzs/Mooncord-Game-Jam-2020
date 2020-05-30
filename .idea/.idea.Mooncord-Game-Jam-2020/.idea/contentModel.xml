@@ -29,6 +29,7 @@
           </e>
           <e p="LightingManager.cs" t="Include" />
           <e p="MyRenderer.cs" t="Include" />
+          <e p="PathfindingManager.cs" t="Include" />
           <e p="RendererData.cs" t="Include" />
           <e p="Room.cs" t="Include" />
           <e p="RoomExit.cs" t="Include" />
