@@ -9,6 +9,12 @@ public class GameCamera : MonoBehaviour {
     private SpriteRenderer fade_sprite_renderer;
 
     private static GameCamera instance;
+    private void Start() {
+        // @TEMP:
+        StartFade(4000, 1f, () => {
+            Debug.Log("fade complete");
+        });
+    }
 
     private void Awake() {
         if (!instance) {
