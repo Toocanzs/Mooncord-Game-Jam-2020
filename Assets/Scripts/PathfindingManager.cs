@@ -15,9 +15,11 @@ public class PathfindingManager : MonoBehaviour
     private LightingManager lightingManager;
 
     public int TestsPerFrame = 20;
-    private int TestStartIndex = 0;
+    private int testIndex = 0;
 
     public LayerMask pathfindingBlockingLayers;
+
+    private NativeArray<TilePathfindingData> probeData;
 
     struct TilePathfindingData
     {
@@ -37,43 +39,79 @@ public class PathfindingManager : MonoBehaviour
         Instance = this;
 
         lightingManager = GetComponent<LightingManager>();
+        probeData = new NativeArray<TilePathfindingData>(lightingManager.totalProbes, Allocator.Persistent);
+        for (int i = 0; i < lightingManager.totalProbes; i++)
+        {
+            probeData[i] = new TilePathfindingData
+            {
+                distance = int.MaxValue,
+                closestSeen = int.MaxValue,
+                occupied = false
+            };
+        }
+
+        lightingManager.OnLightingProbesMoved += HandleProbesMoved;
+    }
+
+    private void HandleProbesMoved()
+    {
+        
+    }
+
+    private void OnDestroy()
+    {
+        probeData.Dispose();
     }
 
     void Update()
     {
         for (int i = 0; i < TestsPerFrame; i++)
         {
-            if (Physics2D.OverlapCircle(lightingManager.probeIndexToXy(TestStartIndex), 0.3f, pathfindingBlockingLayers))
-            {
-                
-            }
-            TestStartIndex = (TestStartIndex + 1) % lightingManager.totalProbes;
+            float2 probePos = lightingManager.probeIndexToXy(testIndex);
+            bool occupied = Physics2D.OverlapCircle(probePos, 0.3f, pathfindingBlockingLayers);
+            
+            //update data
+            var currentData = probeData[testIndex];
+            currentData.occupied = occupied;
+            probeData[testIndex] = currentData;
+
+            testIndex = (testIndex + 1) % lightingManager.totalProbes;
         }
+
+        float3 playerPosition = PlayerCharacter.Instance.transform.position;
+        float2 playerPosRelative = (playerPosition - (float3)lightingManager.transform.position).xy;
+        if (math.all(new bool4(playerPosRelative > 0, playerPosRelative < lightingManager.ProbeCounts)))
+        {
+            int index = IndexFromPosition((int2) playerPosRelative, lightingManager.ProbeCounts);
+            var current = probeData[index];
+            int2 playerPosRounded = (int2)playerPosition.xy;
+            current.closestSeen = playerPosRounded;
+            probeData[index] = current;
+        }
+        
+        NativeArray<TilePathfindingData> output = new NativeArray<TilePathfindingData>(probeData.Length, Allocator.TempJob);
+        var job = new UpdatePathfindingJob
+        {
+            TileData = probeData,
+            ProbeCounts = lightingManager.ProbeCounts,
+            Output = output,
+            PlayerPosition = PlayerCharacter.Instance.transform.position
+        };
+        var handle = job.Schedule(probeData.Length, 16);
+        handle.Complete();
+        probeData.CopyFrom(output);
+        output.Dispose();
     }
-    
-    /*
-     NativeArray<TilePathfindingData> output = new NativeArray<TilePathfindingData>(tileData.Length, Allocator.TempJob);
-            var job = new UpdatePathfindingJob
-            {
-                TileData = tileData,
-                bounds = OccluderTilemap.cellBounds,
-                Output = output,
-                PlayerPosition = PlayerCharacter.Instance.transform.position
-            };
-            var handle = job.Schedule(tileData.Length, 16);
-            handle.Complete();
-            tileData.CopyFrom(output);
-            output.Dispose();
-     
-     static int2 PositionFromIndex(int index, BoundsInt bounds)
+
+    static int2 PositionFromIndex(int index, int2 probeCounts)
     {
-        int x = index % bounds.size.x;
-        int y = index / bounds.size.x;
+        int x = index % probeCounts.x;
+        int y = index / probeCounts.x;
         return new int2(x, y);
     }
-    static int IndexFromPosition(int2 pos, BoundsInt bounds)
+    static int IndexFromPosition(int2 pos, int2 probeCounts)
     {
-        return pos.y * bounds.size.x + pos.x;
+        return pos.y * probeCounts.x + pos.x;
     }
     
     struct UpdatePathfindingJob : IJobParallelFor
@@ -83,14 +121,14 @@ public class PathfindingManager : MonoBehaviour
         [WriteOnly]
         public NativeArray<TilePathfindingData> Output;
 
-        public BoundsInt bounds;
+        public int2 ProbeCounts;
         public float3 PlayerPosition;
         public void Execute(int index)
         {
-            int2 pos = PositionFromIndex(index, bounds);
+            int2 pos = PositionFromIndex(index, ProbeCounts);
 
 
-            int2 playerPos = (int2)math.floor(PlayerPosition.xy);
+            int2 playerPos = (int2)PlayerPosition.xy;
             int2 closestSeen = int.MaxValue;
             int smallestDist = int.MaxValue;
             for (int xOffset = -1; xOffset <= 1; xOffset++)
@@ -98,10 +136,10 @@ public class PathfindingManager : MonoBehaviour
                 for (int yOffset = -1; yOffset <= 1; yOffset++)
                 {
                     var newPos = pos + new int2(xOffset, yOffset);
-                    if (math.any(new bool4(newPos < 0, newPos >= new int2(bounds.size.x, bounds.size.y))))
+                    if (math.any(new bool4(newPos < 0, newPos >= new int2(ProbeCounts.x, ProbeCounts.y))))
                         continue;
-                    var data = TileData[IndexFromPosition(newPos, bounds)];
-                    if (data.colliderType != Tile.ColliderType.Grid)
+                    var data = TileData[IndexFromPosition(newPos, ProbeCounts)];
+                    if (!data.occupied)
                     {
                         if (math.all(playerPos == data.closestSeen))
                         {
@@ -119,5 +157,5 @@ public class PathfindingManager : MonoBehaviour
             current.closestSeen = closestSeen;
             Output[index] = current;
         }
-    }*/
+    }
 }

@@ -22,7 +22,8 @@ public class LightingManager : MonoBehaviour
     public Material TransferValidDataMaterial;
 
     public float hysteresis = 4;
-    public int totalProbes => math.csum(ProbeCounts);
+    public int totalProbes => ProbeCounts.x * ProbeCounts.y;
+    public event Action OnLightingProbesMoved = delegate { };
 
     public void Awake()
     {
@@ -85,6 +86,7 @@ public class LightingManager : MonoBehaviour
         if (math.any(new bool4(cameraPos < lowerBounds, cameraPos > upperBounds)))
         {
             SetCenterRounded(Camera.main.transform.position);
+            OnLightingProbesMoved();
             return true;
         }
 
