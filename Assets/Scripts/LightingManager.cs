@@ -22,6 +22,7 @@ public class LightingManager : MonoBehaviour
     public Material TransferValidDataMaterial;
 
     public float hysteresis = 4;
+    public int totalProbes => math.csum(ProbeCounts);
 
     public void Awake()
     {
@@ -93,6 +94,12 @@ public class LightingManager : MonoBehaviour
     public float3 getBottomLeft()
     {
         return transform.position - new Vector3((ProbeCounts.x / 2f), (ProbeCounts.y / 2f), 0);
+    }
+
+    public float2 probeIndexToXy(int index)
+    {
+        var pos = new int2(index% ProbeCounts.x, index / ProbeCounts.x);
+        return pos + ((float3) transform.position).xy;
     }
     
     private void OnDrawGizmosSelected()

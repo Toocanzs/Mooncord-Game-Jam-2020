@@ -8,14 +8,16 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[RequireComponent(typeof(LightingManager))]
 public class PathfindingManager : MonoBehaviour
 {
-
-    public Tilemap OccluderTilemap;
     public static PathfindingManager Instance;
+    private LightingManager lightingManager;
 
-    private float timeSinceLastGrabbedTiles = 0;
-    public float tileUpdateInterval = 0.25f;
+    public int TestsPerFrame = 20;
+    private int TestStartIndex = 0;
+
+    public LayerMask pathfindingBlockingLayers;
 
     struct TilePathfindingData
     {
@@ -33,18 +35,19 @@ public class PathfindingManager : MonoBehaviour
         }
 
         Instance = this;
-    }
 
-    private void OnDestroy()
-    {
-
+        lightingManager = GetComponent<LightingManager>();
     }
 
     void Update()
     {
-        
-        if (PlayerCharacter.Instance != null)
+        for (int i = 0; i < TestsPerFrame; i++)
         {
+            if (Physics2D.OverlapCircle(lightingManager.probeIndexToXy(TestStartIndex), 0.3f, pathfindingBlockingLayers))
+            {
+                
+            }
+            TestStartIndex = (TestStartIndex + 1) % lightingManager.totalProbes;
         }
     }
     

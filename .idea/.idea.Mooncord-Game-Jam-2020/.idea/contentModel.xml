@@ -18,6 +18,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="DoubleBuffer.cs" t="Include" />
+          <e p="EnemySpawn.cs" t="Include" />
           <e p="Entities" t="Include">
             <e p="Character.cs" t="Include" />
             <e p="EnemyCharacter.cs" t="Include" />
@@ -29,7 +30,12 @@
             <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="LightingManager.cs" t="Include" />
+          <e p="Misc" t="Include">
+            <e p="CameraFollow.cs" t="Include" />
+          </e>
           <e p="MyRenderer.cs" t="Include" />
+          <e p="Objective.cs" t="Include" />
+          <e p="ObjectiveEnemy.cs" t="Include" />
           <e p="PathfindingManager.cs" t="Include" />
           <e p="RendererData.cs" t="Include" />
           <e p="Room.cs" t="Include" />

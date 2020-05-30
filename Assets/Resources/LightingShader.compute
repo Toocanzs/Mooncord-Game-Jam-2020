@@ -71,8 +71,8 @@ void LightingRaycast (uint3 id : SV_DispatchThreadID)
         float s,c;
         sincos(angle, s, c);
         float2 dir = float2(c,s);
-        //dir *= float(ProbeCounts.x) / ProbeCounts.y;
-        //dir = normalize(dir);
+        dir.x *= float(ProbeCounts.y) / ProbeCounts.x;
+        dir = normalize(dir);
         RaycastResult result = raycast(textureSpaceOrigin, dir);
         float2 worldSpaceEndPos = result.endPos + LightingOrigin;
         if(result.hit)
