@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="" />
+    <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,62 +23,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <marker date="1590868183669" expanded="false" signature="64:245" ph="..." />
-                <marker date="1590868183669" expanded="true" signature="282:8455" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="322:7821" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="366:601" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="493:591" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="886:1204" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="1235:1567" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="1631:1695" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="1749:1815" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="1862:2502" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="2094:2293" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="2310:2491" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="2559:2710" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="2769:2912" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="2983:3120" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="3170:3906" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="3402:3896" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="3530:3711" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="3732:3882" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="3943:5006" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="4597:4962" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="4655:4948" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="5055:5628" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="5105:5566" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="5341:5409" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="5677:6238" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="5727:6188" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="5963:6031" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="6277:6885" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="6503:6850" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="6659:6790" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="6945:7815" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="7117:7805" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="7246:7619" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="7458:7565" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="7640:7791" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="7923:8137" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="8050:8131" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="8239:8453" ph="{...}" />
-                <marker date="1590868183669" expanded="true" signature="8366:8447" ph="{...}" />
-              </folding>
+            <state relative-caret-position="286">
+              <caret line="195" column="69" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
-              <caret line="40" column="83" lean-forward="true" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+              <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
               <folding>
                 <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
                 <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
@@ -102,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/UpdateBoundsJob.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="31" />
+              <caret column="4" selection-start-column="4" selection-end-column="31" />
               <folding>
                 <marker date="1588598074000" expanded="false" signature="38:99" ph="..." />
                 <marker date="1588598074000" expanded="true" signature="190:2593" ph="{...}" />
@@ -118,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
-              <caret line="167" column="14" lean-forward="true" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
+              <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
               <folding>
                 <marker date="1590868126567" expanded="true" signature="6:232" ph="..." />
                 <marker date="1590868126567" expanded="true" signature="325:11977" ph="{...}" />
@@ -355,8 +317,8 @@
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/UpdateBoundsJob.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/SpriteSkinComposite.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs" />
-        <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs" />
+        <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs" />
       </list>
     </option>
   </component>
@@ -439,12 +401,12 @@
       <updated>1590778888490</updated>
       <workItem from="1590778890383" duration="45491000" />
       <workItem from="1590830084858" duration="27000" />
-      <workItem from="1590858454009" duration="10230000" />
+      <workItem from="1590858454009" duration="11527000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55748000" />
+    <option name="totallyTimeSpent" value="57045000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,7 +418,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14544486" />
@@ -1345,7 +1308,7 @@
     <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/UpdateBoundsJob.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="31" />
+          <caret column="4" selection-start-column="4" selection-end-column="31" />
           <folding>
             <marker date="1588598074000" expanded="false" signature="38:99" ph="..." />
             <marker date="1588598074000" expanded="true" signature="190:2593" ph="{...}" />
@@ -1373,7 +1336,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
-          <caret line="167" column="14" lean-forward="true" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
+          <caret line="167" column="14" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
           <folding>
             <marker date="1590868126567" expanded="true" signature="6:232" ph="..." />
             <marker date="1590868126567" expanded="true" signature="325:11977" ph="{...}" />
@@ -1431,55 +1394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <marker date="1590868183669" expanded="false" signature="64:245" ph="..." />
-            <marker date="1590868183669" expanded="true" signature="282:8455" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="322:7821" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="366:601" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="493:591" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="886:1204" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="1235:1567" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="1631:1695" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="1749:1815" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="1862:2502" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="2094:2293" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="2310:2491" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="2559:2710" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="2769:2912" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="2983:3120" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="3170:3906" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="3402:3896" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="3530:3711" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="3732:3882" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="3943:5006" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="4597:4962" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="4655:4948" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="5055:5628" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="5105:5566" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="5341:5409" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="5677:6238" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="5727:6188" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="5963:6031" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="6277:6885" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="6503:6850" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="6659:6790" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="6945:7815" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="7117:7805" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="7246:7619" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="7458:7565" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="7640:7791" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="7923:8137" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="8050:8131" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="8239:8453" ph="{...}" />
-            <marker date="1590868183669" expanded="true" signature="8366:8447" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/b3/3e9ffc93/Mathf.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -1490,7 +1404,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
-          <caret line="40" column="83" lean-forward="true" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+          <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
           <folding>
             <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
             <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
@@ -1501,6 +1415,13 @@
             <marker date="1590868902037" expanded="true" signature="693:1398" ph="{...}" />
             <marker date="1590868902037" expanded="true" signature="1441:1487" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="195" column="69" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
         </state>
       </provider>
     </entry>
