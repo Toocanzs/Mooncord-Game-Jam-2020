@@ -37,6 +37,7 @@
           <e p="LightingManager.cs" t="Include" />
           <e p="Misc" t="Include">
             <e p="CameraFollow.cs" t="Include" />
+            <e p="IntroManager.cs" t="Include" />
           </e>
           <e p="MyRenderer.cs" t="Include" />
           <e p="Objective.cs" t="Include" />
@@ -48,6 +49,9 @@
           <e p="RoomExit.cs" t="Include" />
           <e p="RoomManager.cs" t="Include" />
           <e p="TeamComponent.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="GameMainMenu.cs" t="Include" />
+          </e>
           <e p="Weapons" t="Include">
             <e p="SimpleProjectile.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />

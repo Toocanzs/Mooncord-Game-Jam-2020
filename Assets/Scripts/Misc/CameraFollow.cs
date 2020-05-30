@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform target_transform;
     public float FollowDelay;
-
+    public float maxCursorDistance = 10;
+    
     private Vector3 followVelocity;
     //private Vector3 finalTarget;
 
@@ -14,7 +17,12 @@ public class CameraFollow : MonoBehaviour
 
     public void SetTarget(Transform target) {
         target_transform = target;
-    } 
+    }
+
+    private void Start()
+    {
+        transform.position = target_transform.position;
+    }
 
     private void Update()
     {
@@ -27,9 +35,10 @@ public class CameraFollow : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         Vector2 offset = mousePos - targetPos;
+        float length = offset.magnitude;
         Vector2 direction = offset.normalized;
-
-        Vector2 target = (Vector2)target_transform.position + (offset / 2.5f);
+        Vector2 clampedOffset = math.smoothstep(0, maxCursorDistance, length) * maxCursorDistance * direction;
+        Vector2 target = (Vector2)target_transform.position + clampedOffset / 2.5f;
 
         var final_target = new Vector3(target.x, target.y, -10f);
         transform.position = Vector3.SmoothDamp(transform.position, final_target, ref followVelocity, FollowDelay);

@@ -9,7 +9,7 @@ int2 ProbeCounts;
 float RandomRayOffset;
 float2 RandomProbeOffset;
 
-#define MAX_RAY_LENGTH 256
+#define MAX_RAY_LENGTH 512
 #define PI 3.14159265359
 
 struct RaycastResult

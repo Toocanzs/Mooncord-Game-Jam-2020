@@ -166,7 +166,7 @@ public class PathfindingManager : MonoBehaviour
                 distance = currentData.distance,
                 occupied = occupied
             };
-
+            
             testIndex = (testIndex + 1) % lightingManager.totalProbes;
         }
 
