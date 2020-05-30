@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Character/test eddie sheet.psb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Character/test eddie sheet.psb.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,54 +22,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="195" column="69" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
-              <folding>
-                <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
-                <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
-                <marker date="1590868902037" expanded="true" signature="318:417" ph="/* private Vector3 finalTarget; ... */" />
-                <marker date="1590868902037" expanded="true" signature="463:505" ph="{...}" />
-                <marker date="1590868902037" expanded="true" signature="531:599" ph="{...}" />
-                <marker date="1590868902037" expanded="true" signature="626:661" ph="{...}" />
-                <marker date="1590868902037" expanded="true" signature="693:1398" ph="{...}" />
-                <marker date="1590868902037" expanded="true" signature="1441:1487" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/SpriteSkinComposite.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/MyRenderer.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="4" selection-start-column="4" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/UpdateBoundsJob.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="4" selection-start-column="4" selection-end-column="31" />
               <folding>
-                <marker date="1588598074000" expanded="false" signature="38:99" ph="..." />
-                <marker date="1588598074000" expanded="true" signature="190:2593" ph="{...}" />
-                <marker date="1588598074000" expanded="true" signature="298:2591" ph="{...}" />
-                <marker date="1588598074000" expanded="true" signature="950:2585" ph="{...}" />
-                <marker date="1588598074000" expanded="true" signature="2393:2559" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="6:237" ph="..." />
+                <marker date="1590818906579" expanded="true" signature="283:5090" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="602:907" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="996:1208" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="1079:1202" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="1295:4721" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="1462:4639" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="1538:4196" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="1898:2375" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="4213:4629" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="4819:5088" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="5142:7185" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="5416:5473" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="5573:7183" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="6154:6249" ph="{...}" />
+                <marker date="1590818906579" expanded="true" signature="6503:7149" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -173,17 +145,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyFollower.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="18" column="108" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
+            <state relative-caret-position="115">
+              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
               <folding>
-                <marker date="1590867473552" expanded="false" signature="6:103" ph="..." />
-                <marker date="1590867473552" expanded="true" signature="148:526" ph="{...}" />
-                <marker date="1590867473552" expanded="true" signature="195:216" ph="{...}" />
-                <marker date="1590867473552" expanded="true" signature="239:524" ph="{...}" />
-                <marker date="1590867473552" expanded="true" signature="294:518" ph="{...}" />
+                <marker date="1590873965584" expanded="true" signature="6:103" ph="..." />
+                <marker date="1590873965584" expanded="true" signature="147:525" ph="{...}" />
+                <marker date="1590873965584" expanded="true" signature="194:215" ph="{...}" />
+                <marker date="1590873965584" expanded="true" signature="238:523" ph="{...}" />
+                <marker date="1590873965584" expanded="true" signature="293:517" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -221,8 +193,8 @@
       <find>int.MaxValue - 1</find>
       <find>PositionInBounds</find>
       <find>m_TransformData</find>
-      <find>.length</find>
       <find>targetPos</find>
+      <find>.length</find>
     </findStrings>
     <replaceStrings>
       <replace>99999</replace>
@@ -256,6 +228,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/93/acce9b74/CommandBuffer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/a5/f8545f95/Renderer2DData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/LightingShader.compute" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/bd/dc2023e9/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteUnlit.shader" root0="FORCE_HIGHLIGHTING" />
@@ -279,7 +252,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Materials/TransferValidData.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E8935866-1AF6-4F54-8992-FA1C33F5BFEF/c0/8bb02fd4/Tile.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Entities/PlayerCharacter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/SpriteSkinComposite.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -319,6 +291,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemyFollower.cs" />
       </list>
     </option>
   </component>
@@ -401,12 +374,12 @@
       <updated>1590778888490</updated>
       <workItem from="1590778890383" duration="45491000" />
       <workItem from="1590830084858" duration="27000" />
-      <workItem from="1590858454009" duration="11527000" />
+      <workItem from="1590858454009" duration="12905000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57045000" />
+    <option name="totallyTimeSpent" value="58423000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,7 +392,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14544486" />
@@ -466,13 +438,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/ef/a2375680/RenderPipelineAsset.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FE8F19C-7470-419E-9D28-523C0C0FB415/a5/f8545f95/Renderer2DData.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -1182,31 +1147,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MyRenderer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <marker date="1590818906579" expanded="true" signature="6:237" ph="..." />
-            <marker date="1590818906579" expanded="true" signature="283:5090" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="602:907" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="996:1208" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="1079:1202" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="1295:4721" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="1462:4639" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="1538:4196" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="1898:2375" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="4213:4629" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="4819:5088" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="5142:7185" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="5416:5473" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="5573:7183" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="6154:6249" ph="{...}" />
-            <marker date="1590818906579" expanded="true" signature="6503:7149" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -1291,48 +1231,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="18" column="108" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
-          <folding>
-            <marker date="1590867473552" expanded="false" signature="6:103" ph="..." />
-            <marker date="1590867473552" expanded="true" signature="148:526" ph="{...}" />
-            <marker date="1590867473552" expanded="true" signature="195:216" ph="{...}" />
-            <marker date="1590867473552" expanded="true" signature="239:524" ph="{...}" />
-            <marker date="1590867473552" expanded="true" signature="294:518" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/UpdateBoundsJob.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="31" />
-          <folding>
-            <marker date="1588598074000" expanded="false" signature="38:99" ph="..." />
-            <marker date="1588598074000" expanded="true" signature="190:2593" ph="{...}" />
-            <marker date="1588598074000" expanded="true" signature="298:2591" ph="{...}" />
-            <marker date="1588598074000" expanded="true" signature="950:2585" ph="{...}" />
-            <marker date="1588598074000" expanded="true" signature="2393:2559" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/SpriteSkinComposite.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Resources/LightingShader.compute">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -1401,10 +1299,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="195" column="69" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/SpriteSkinComposite.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/UpdateBoundsJob.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" selection-start-column="4" selection-end-column="31" />
+          <folding>
+            <marker date="1588598074000" expanded="false" signature="38:99" ph="..." />
+            <marker date="1588598074000" expanded="true" signature="190:2593" ph="{...}" />
+            <marker date="1588598074000" expanded="true" signature="298:2591" ph="{...}" />
+            <marker date="1588598074000" expanded="true" signature="950:2585" ph="{...}" />
+            <marker date="1588598074000" expanded="true" signature="2393:2559" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+        <state relative-caret-position="636">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
           <folding>
             <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
             <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
@@ -1418,10 +1344,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.animation@3.2.2/Runtime/TransformAccessJob.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Resources/LightingShader.compute">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="195" column="69" selection-start-line="195" selection-start-column="69" selection-end-line="195" selection-end-column="69" />
+        <state relative-caret-position="253">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/MyRenderer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1590818906579" expanded="true" signature="6:237" ph="..." />
+            <marker date="1590818906579" expanded="true" signature="283:5090" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="602:907" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="996:1208" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="1079:1202" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="1295:4721" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="1462:4639" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="1538:4196" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="1898:2375" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="4213:4629" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="4819:5088" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="5142:7185" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="5416:5473" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="5573:7183" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="6154:6249" ph="{...}" />
+            <marker date="1590818906579" expanded="true" signature="6503:7149" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="108" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyFollower.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+          <folding>
+            <marker date="1590873965584" expanded="true" signature="6:103" ph="..." />
+            <marker date="1590873965584" expanded="true" signature="147:525" ph="{...}" />
+            <marker date="1590873965584" expanded="true" signature="194:215" ph="{...}" />
+            <marker date="1590873965584" expanded="true" signature="238:523" ph="{...}" />
+            <marker date="1590873965584" expanded="true" signature="293:517" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
