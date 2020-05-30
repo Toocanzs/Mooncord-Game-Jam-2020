@@ -15,11 +15,11 @@ public class WeaponKatana : Weapon
         base.Fire();
         var weapon_direction = GetFireDirection();
         var direction_angle = Mathf.Rad2Deg * Mathf.Atan2(weapon_direction.y, weapon_direction.x);
-        float start_offset = 0f;
+        float start_offset = 90f;
         start_direcition = -1f;
         if(direction_angle > 90f || direction_angle < -90f) {
             start_direcition = 1f;
-            start_offset = -180f;
+            start_offset = -90f;
         }
         swing_start_rotation = Mathf.Rad2Deg * Mathf.Atan2(weapon_direction.y, weapon_direction.x) + start_offset;
         transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, swing_start_rotation));
@@ -33,10 +33,10 @@ public class WeaponKatana : Weapon
         swing_time_current = Mathf.Max(swing_time_current - Time.deltaTime, 0f);
         if(swing_time_current > 0f) {
             float swing_alpha = 1f - (swing_time_current / swing_time_total);
-            float swing_percent = 90f * swing_alpha;
+            float swing_percent = 180f * swing_alpha;
             transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, swing_start_rotation + (swing_percent * start_direcition)));
         } else {
-            transform.localRotation = Quaternion.identity;
+            transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
             var collider = GetComponent<Collider2D>();
             collider.enabled = false;
         }

@@ -46,9 +46,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
-  m_Size: {x: 0.5, y: 3}
-  m_Direction: 0
+  m_Offset: {x: 1.5, y: 0}
+  m_Size: {x: 3, y: 0.5}
+  m_Direction: 1
 --- !u!114 &1508553697303491301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,10 +62,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_droppable: 0
-  fire_cooldown: 0.5
+  fire_cooldown: 0.4
   max_ammo: 0
   projectile: {fileID: 0}
-  swing_time_total: 0.15
+  swing_time_total: 0.13
   health_change_value: -50
 --- !u!1 &7370030980865072505
 GameObject:
@@ -91,13 +91,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7370030980865072505}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4037838350333938362}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &7270637634965031512
 SpriteRenderer:
   m_ObjectHideFlags: 0
