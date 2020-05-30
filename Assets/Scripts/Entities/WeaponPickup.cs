@@ -6,7 +6,7 @@ public class WeaponPickup : Pickupable, IPikcupable
 {
     public GameObject weapon_type_prefab;
     // @TODO:
-    private int ammo_override = -1;
+    //private int ammo_override = -1;
 
     public GameObject GetWeaponTypePrefab() {
         return weapon_type_prefab;

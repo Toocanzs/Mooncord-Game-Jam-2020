@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using DG.Tweening;
 
 public class CameraFollow : MonoBehaviour
 {
     public Transform target_transform;
     public float FollowDelay;
     public float maxCursorDistance = 10;
-    
     private Vector3 followVelocity;
+
     //private Vector3 finalTarget;
 
     //public Vector3 FollowPosition { get { return finalTarget; } }
-
     public void SetTarget(Transform target) {
         target_transform = target;
     }
@@ -30,6 +30,7 @@ public class CameraFollow : MonoBehaviour
     {
         TrackTarget();
     }
+
 
     private void TrackTarget()
     {
