@@ -17,7 +17,7 @@ public class HealthComponent : MonoBehaviour
     }
 
     public void ChangeHealth(float value) {
-        Debug.Log("health changed by " + value);
+        //Debug.Log("health changed by " + value);
         current_health = Mathf.Clamp(current_health + value, 0f, max_health);
     }
 

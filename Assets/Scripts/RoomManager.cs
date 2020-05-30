@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
@@ -8,9 +9,11 @@ public class RoomManager : MonoBehaviour
     private static RoomManager instance;
 
     private void Awake() {
-        if(instance != null) {
+        if(instance == null) {
             instance = this;
         }
+        // @TEMP:
+        rooms = Object.FindObjectsOfType<Room>().ToList();
     }
 
     void Start()
