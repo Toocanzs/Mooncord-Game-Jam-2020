@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Tilemaps;
 
 public struct WeaponProjectileProperties {
     public Vector2 direction;
@@ -62,6 +63,9 @@ public abstract class WeaponProjectile : MonoBehaviour
                 if(rigidbody_comp.bodyType == RigidbodyType2D.Static) {
                     OnDeath();
                 }
+            }
+            if(collision is TilemapCollider2D) {
+                OnDeath();
             }
         }
     }
