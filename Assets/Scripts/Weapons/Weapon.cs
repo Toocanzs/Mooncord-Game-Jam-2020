@@ -2,26 +2,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public abstract class Weapon : MonoBehaviour
 {
+    public bool is_droppable;
     public float fire_cooldown;
-    public float max_ammo;
+    public int max_ammo;
     public GameObject projectile;
 
     protected float fire_cooldown_remaining;
-    protected float current_ammo;
+    protected int current_ammo;
     protected GameObject owner;
 
     void Update()
     {
         fire_cooldown_remaining = Math.Max(fire_cooldown_remaining - Time.deltaTime, 0f);
     }
+    
+    public bool HasAmmo() {
+        return max_ammo > 0;
+    }
+
+    public int GetCurrentAmmo() {
+        return current_ammo;
+    }
 
     public virtual bool CanFire() {
         // other conditions for more complex weapons?
-        bool ammo_avail = max_ammo > 0f ? current_ammo > 0f : true;
+        bool ammo_avail = max_ammo > 0 ? current_ammo > 0 : true;
         return fire_cooldown_remaining == 0f && ammo_avail;
     }
 

@@ -16,6 +16,7 @@ public class Room : MonoBehaviour
             var enemy_instance = Instantiate<GameObject>(enemy_types[0], spawn.transform);
             // make new spawns objectives in order to exit room
             enemy_instance.AddComponent<ObjectiveEnemy>();
+            //Debug.Log("Spanwed nanite " + enemy_instance.name);
         });
         
     }
@@ -37,7 +38,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void SetActive() {
+    public void ActivateRoom() {
 
     }
 
