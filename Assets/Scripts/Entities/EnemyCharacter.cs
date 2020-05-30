@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacter : Character
+public class EnemyCharacter : Character
 {
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -13,10 +12,13 @@ public class PlayerCharacter : Character
     // Update is called once per frame
     void Update()
     {
-        
+        if (health_component.isDead()) {
+            OnDeath();
+        }
     }
 
     protected override void OnDeath() {
         base.OnDeath();
+        Destroy(gameObject);
     }
 }

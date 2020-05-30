@@ -18,7 +18,7 @@ public abstract class WeaponProjectile : MonoBehaviour
     private Team team;
 
     public bool can_friendly_fire;
-    public float damage_amount;
+    public float health_change_on_impact;
     public float speed_initial;
     //public Vector2 velocity_change_amount;
 
@@ -47,12 +47,12 @@ public abstract class WeaponProjectile : MonoBehaviour
         var other_health_component = collision.gameObject.GetComponent<HealthComponent>();
         if (other_health_component) {
             if (can_friendly_fire) {
-                other_health_component.ChangeHealth(damage_amount);
+                other_health_component.ChangeHealth(health_change_on_impact);
                 OnDeath();
             } else {
                 var team_component = collision.gameObject.GetComponent<TeamComponent>();
                 if(team_component.Team != team) {
-                    other_health_component.ChangeHealth(damage_amount);
+                    other_health_component.ChangeHealth(health_change_on_impact);
                     OnDeath();
                 }
             }
