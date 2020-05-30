@@ -16,7 +16,7 @@ public class CameraFollow : MonoBehaviour
         target_transform = target;
     } 
 
-    private void FixedUpdate()
+    private void Update()
     {
         TrackTarget();
     }
