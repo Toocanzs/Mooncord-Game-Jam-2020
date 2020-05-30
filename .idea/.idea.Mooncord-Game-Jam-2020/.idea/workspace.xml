@@ -151,11 +151,11 @@
             <state relative-caret-position="115">
               <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
               <folding>
-                <marker date="1590873965584" expanded="true" signature="6:103" ph="..." />
-                <marker date="1590873965584" expanded="true" signature="147:525" ph="{...}" />
-                <marker date="1590873965584" expanded="true" signature="194:215" ph="{...}" />
-                <marker date="1590873965584" expanded="true" signature="238:523" ph="{...}" />
-                <marker date="1590873965584" expanded="true" signature="293:517" ph="{...}" />
+                <marker date="1590875687618" expanded="true" signature="6:103" ph="..." />
+                <marker date="1590875687618" expanded="true" signature="147:525" ph="{...}" />
+                <marker date="1590875687618" expanded="true" signature="194:215" ph="{...}" />
+                <marker date="1590875687618" expanded="true" signature="238:523" ph="{...}" />
+                <marker date="1590875687618" expanded="true" signature="293:517" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -391,7 +391,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14544486" />
@@ -1153,7 +1153,6 @@
           <caret line="89" column="44" selection-start-line="89" selection-start-column="44" selection-end-line="89" selection-end-column="44" />
           <folding>
             <marker date="1590867473553" expanded="true" signature="6:117" ph="..." />
-            <marker date="1590867473553" expanded="true" signature="163:4152" ph="{...}" />
             <marker date="1590867473553" expanded="true" signature="838:1077" ph="{...}" />
             <marker date="1590867473553" expanded="true" signature="874:1045" ph="{...}" />
             <marker date="1590867473553" expanded="true" signature="1095:2047" ph="{...}" />
@@ -1331,16 +1330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
           <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-          <folding>
-            <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
-            <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
-            <marker date="1590868902037" expanded="true" signature="318:417" ph="/* private Vector3 finalTarget; ... */" />
-            <marker date="1590868902037" expanded="true" signature="463:505" ph="{...}" />
-            <marker date="1590868902037" expanded="true" signature="531:599" ph="{...}" />
-            <marker date="1590868902037" expanded="true" signature="626:661" ph="{...}" />
-            <marker date="1590868902037" expanded="true" signature="693:1398" ph="{...}" />
-            <marker date="1590868902037" expanded="true" signature="1441:1487" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1375,23 +1364,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="18" column="108" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemyFollower.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
           <folding>
-            <marker date="1590873965584" expanded="true" signature="6:103" ph="..." />
-            <marker date="1590873965584" expanded="true" signature="147:525" ph="{...}" />
-            <marker date="1590873965584" expanded="true" signature="194:215" ph="{...}" />
-            <marker date="1590873965584" expanded="true" signature="238:523" ph="{...}" />
-            <marker date="1590873965584" expanded="true" signature="293:517" ph="{...}" />
+            <marker date="1590875687618" expanded="true" signature="6:103" ph="..." />
+            <marker date="1590875687618" expanded="true" signature="147:525" ph="{...}" />
+            <marker date="1590875687618" expanded="true" signature="194:215" ph="{...}" />
+            <marker date="1590875687618" expanded="true" signature="238:523" ph="{...}" />
+            <marker date="1590875687618" expanded="true" signature="293:517" ph="{...}" />
           </folding>
         </state>
       </provider>
