@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Mooncord-Game-Jam-2020/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/LightingShader.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/LightingShader.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PathfindingManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-    </list>
+    <list default="true" id="5ab0192d-ee3b-4faa-8265-f51c17b867a9" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,17 +73,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+            <state relative-caret-position="406">
+              <caret line="40" column="83" lean-forward="true" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
               <folding>
-                <marker date="1590868732758" expanded="true" signature="6:92" ph="..." />
-                <marker date="1590868732758" expanded="true" signature="135:1440" ph="{...}" />
-                <marker date="1590868732758" expanded="true" signature="293:392" ph="/* private Vector3 finalTarget; ... */" />
-                <marker date="1590868732758" expanded="true" signature="438:480" ph="{...}" />
-                <marker date="1590868732758" expanded="true" signature="506:574" ph="{...}" />
-                <marker date="1590868732758" expanded="true" signature="601:636" ph="{...}" />
-                <marker date="1590868732758" expanded="true" signature="668:1349" ph="{...}" />
-                <marker date="1590868732758" expanded="true" signature="1392:1438" ph="{...}" />
+                <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
+                <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
+                <marker date="1590868902037" expanded="true" signature="318:417" ph="/* private Vector3 finalTarget; ... */" />
+                <marker date="1590868902037" expanded="true" signature="463:505" ph="{...}" />
+                <marker date="1590868902037" expanded="true" signature="531:599" ph="{...}" />
+                <marker date="1590868902037" expanded="true" signature="626:661" ph="{...}" />
+                <marker date="1590868902037" expanded="true" signature="693:1398" ph="{...}" />
+                <marker date="1590868902037" expanded="true" signature="1441:1487" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -221,22 +212,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Materials/SpriteUnlit.shader">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="59" column="61" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
-              <folding>
-                <marker date="1590864729502" expanded="true" signature="39:1803" ph="{...}" />
-                <marker date="1590864729502" expanded="true" signature="60:292" ph="{...}" />
-                <marker date="1590864729502" expanded="true" signature="311:1801" ph="{...}" />
-                <marker date="1590864729502" expanded="true" signature="477:1795" ph="{...}" />
-                <marker date="1590864729502" expanded="true" signature="547:1780" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/EnemeyFollower.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -322,6 +297,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LightingManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/bd/dc2023e9/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteUnlit.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/b3/3e9ffc93/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LightingCameraTag.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/SpriteTransparent.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Materials/TransferToFullscreen.shader" root0="FORCE_HIGHLIGHTING" />
@@ -392,7 +368,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -463,12 +439,12 @@
       <updated>1590778888490</updated>
       <workItem from="1590778890383" duration="45491000" />
       <workItem from="1590830084858" duration="27000" />
-      <workItem from="1590858454009" duration="9507000" />
+      <workItem from="1590858454009" duration="10230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55025000" />
+    <option name="totallyTimeSpent" value="55748000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -480,8 +456,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14544486" />
@@ -528,7 +503,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/LightingManager.cs" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/ef/a2375680/RenderPipelineAsset.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -1506,19 +1480,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48050808-8AEE-40CA-B708-18FF164A29D5/b3/3e9ffc93/Mathf.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="581" column="24" selection-start-line="581" selection-start-column="24" selection-end-line="581" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Misc/CameraFollow.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+        <state relative-caret-position="406">
+          <caret line="40" column="83" lean-forward="true" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
           <folding>
-            <marker date="1590868732758" expanded="true" signature="6:92" ph="..." />
-            <marker date="1590868732758" expanded="true" signature="135:1440" ph="{...}" />
-            <marker date="1590868732758" expanded="true" signature="293:392" ph="/* private Vector3 finalTarget; ... */" />
-            <marker date="1590868732758" expanded="true" signature="438:480" ph="{...}" />
-            <marker date="1590868732758" expanded="true" signature="506:574" ph="{...}" />
-            <marker date="1590868732758" expanded="true" signature="601:636" ph="{...}" />
-            <marker date="1590868732758" expanded="true" signature="668:1349" ph="{...}" />
-            <marker date="1590868732758" expanded="true" signature="1392:1438" ph="{...}" />
+            <marker date="1590868902037" expanded="true" signature="6:117" ph="..." />
+            <marker date="1590868902037" expanded="true" signature="160:1489" ph="{...}" />
+            <marker date="1590868902037" expanded="true" signature="318:417" ph="/* private Vector3 finalTarget; ... */" />
+            <marker date="1590868902037" expanded="true" signature="463:505" ph="{...}" />
+            <marker date="1590868902037" expanded="true" signature="531:599" ph="{...}" />
+            <marker date="1590868902037" expanded="true" signature="626:661" ph="{...}" />
+            <marker date="1590868902037" expanded="true" signature="693:1398" ph="{...}" />
+            <marker date="1590868902037" expanded="true" signature="1441:1487" ph="{...}" />
           </folding>
         </state>
       </provider>
