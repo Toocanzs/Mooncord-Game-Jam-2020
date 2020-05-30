@@ -54,19 +54,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void SetSpriteFacing() {
-        var axis_horizontal = Input.GetAxis("Horizontal");
-        var axis_vertical = Input.GetAxis("Vertical");
-        if(axis_horizontal > 0f) {
-            //character_sprite.flipX = false;
-        } else if(axis_horizontal < 0f) {
-            //character_sprite.flipX = true;
-        }
-        if(axis_vertical > 0f) {
-
-        }
-    }
-
     private void SetWeaponTransform() {
         var axis_horizontal = Input.GetAxis("Horizontal");
         var weapon_transform = transform.Find("weapon_position");
