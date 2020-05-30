@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         UpdateMovement();
-        SetSpriteFacing();
         SetWeaponTransform();
     }
 
@@ -59,24 +58,26 @@ public class PlayerMovement : MonoBehaviour
         var axis_horizontal = Input.GetAxis("Horizontal");
         var axis_vertical = Input.GetAxis("Vertical");
         if(axis_horizontal > 0f) {
-            character_sprite.flipX = false;
+            //character_sprite.flipX = false;
         } else if(axis_horizontal < 0f) {
-            character_sprite.flipX = true;
+            //character_sprite.flipX = true;
         }
         if(axis_vertical > 0f) {
 
         }
     }
+
     private void SetWeaponTransform() {
+        var axis_horizontal = Input.GetAxis("Horizontal");
         var weapon_transform = transform.Find("weapon_position");
-        var flipped_position = default_weapon_transform_position;
-        if (character_sprite.flipX) {
-            flipped_position.x = -flipped_position.x;
-        }
+        var updated_position = default_weapon_transform_position;
+        if (axis_horizontal < 0f) {
+            updated_position.x = -default_weapon_transform_position.x;
+        } 
         if (!weapon_transform) {
             Debug.LogError("Unable to find weapon position transform");
         } else {
-            weapon_transform.localPosition = flipped_position;
+            weapon_transform.localPosition = updated_position;
         }
     }
 }
