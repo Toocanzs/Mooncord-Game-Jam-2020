@@ -16,7 +16,7 @@ public class ControlManager : MonoBehaviour
     }
 
     public static bool IsInputEnabled() {
-        return instance.player_input_enabled;
+        return instance ? instance.player_input_enabled : true;
     }
 
     public static void SetInputEnabled(bool value) {

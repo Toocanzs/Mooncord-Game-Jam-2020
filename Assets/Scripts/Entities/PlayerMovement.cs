@@ -31,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!ControlManager.IsInputEnabled()) {
+            return;
+        }
         UpdateMovement();
         SetWeaponTransform();
     }

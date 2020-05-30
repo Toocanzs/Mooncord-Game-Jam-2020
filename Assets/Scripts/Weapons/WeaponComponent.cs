@@ -69,6 +69,9 @@ public class WeaponComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!ControlManager.IsInputEnabled()) {
+            return;
+        }
         if (Input.GetButton("Fire1")) {
             TryFireWeapon();
         }
