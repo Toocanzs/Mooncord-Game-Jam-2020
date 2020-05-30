@@ -19,6 +19,8 @@
         <e p="Scripts" t="Include">
           <e p="DoubleBuffer.cs" t="Include" />
           <e p="Entities" t="Include">
+            <e p="Character.cs" t="Include" />
+            <e p="EnemyCharacter.cs" t="Include" />
             <e p="HealthComponent.cs" t="Include" />
             <e p="HealthPickup.cs" t="Include" />
             <e p="Pickupable.cs" t="Include" />

@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class PlayerCharacter : Character
 {
+    public static PlayerCharacter Instance;
     // Start is called before the first frame update
+    void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(this);
+            Debug.LogError("Two players existed in the scene, destroying.");
+            return;
+        }
+
+        Instance = this;
+    }
     void Start()
     {
         

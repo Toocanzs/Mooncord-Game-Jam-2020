@@ -40,8 +40,8 @@ RaycastResult raycast(float2 origin, float2 dir)
     for(int i = 0; i < MAX_RAY_LENGTH; i++)
     {
         float2 samplePos = origin + pos;
-        //if(any(bool4(samplePos < 0, samplePos > ProbeCounts * PixelsPerUnit)))
-        //    return result;
+        if(any(bool4(samplePos < 0, samplePos >= ProbeCounts * PixelsPerUnit)))
+            return result;
         float4 test = WallBuffer[uint2(samplePos)];
         if(test.a >= 1)
         {
