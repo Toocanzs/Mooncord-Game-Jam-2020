@@ -19,7 +19,9 @@
           <e p="LightingShader.compute" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="CharacterAnimator.cs" t="Include" />
           <e p="DoubleBuffer.cs" t="Include" />
+          <e p="EnemeyFollower.cs" t="Include" />
           <e p="EnemySpawn.cs" t="Include" />
           <e p="Entities" t="Include">
             <e p="Character.cs" t="Include" />
@@ -50,6 +52,7 @@
             <e p="SimpleProjectile.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponComponent.cs" t="Include" />
+            <e p="WeaponKatana.cs" t="Include" />
             <e p="WeaponProjectile.cs" t="Include" />
             <e p="WeaponSyringe.cs" t="Include" />
           </e>

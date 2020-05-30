@@ -85,9 +85,9 @@ public class LightingManager : MonoBehaviour
         float2 cameraPos = ((float3)Camera.main.transform.position).xy;
         if (math.any(new bool4(cameraPos < lowerBounds, cameraPos > upperBounds)))
         {
-            var old = Camera.main.transform.position;
+            var old = transform.position;
             SetCenterRounded(Camera.main.transform.position);
-            var newPos = Camera.main.transform.position;
+            var newPos = transform.position;
             OnLightingProbesMoved(newPos - old);
             return true;
         }
@@ -102,8 +102,8 @@ public class LightingManager : MonoBehaviour
 
     public float2 probeIndexToXy(int index)
     {
-        var pos = new int2(index% ProbeCounts.x, index / ProbeCounts.x);
-        return pos + ((float3) transform.position).xy;
+        var pos = new int2(index % ProbeCounts.x, index / ProbeCounts.x);
+        return pos + getBottomLeft().xy;
     }
     
     private void OnDrawGizmosSelected()
