@@ -23,7 +23,7 @@ public class LightingManager : MonoBehaviour
 
     public float hysteresis = 4;
     public int totalProbes => ProbeCounts.x * ProbeCounts.y;
-    public event Action OnLightingProbesMoved = delegate { };
+    public event Action<float3> OnLightingProbesMoved = delegate { };
 
     public void Awake()
     {
@@ -85,8 +85,10 @@ public class LightingManager : MonoBehaviour
         float2 cameraPos = ((float3)Camera.main.transform.position).xy;
         if (math.any(new bool4(cameraPos < lowerBounds, cameraPos > upperBounds)))
         {
+            var old = Camera.main.transform.position;
             SetCenterRounded(Camera.main.transform.position);
-            OnLightingProbesMoved();
+            var newPos = Camera.main.transform.position;
+            OnLightingProbesMoved(newPos - old);
             return true;
         }
 

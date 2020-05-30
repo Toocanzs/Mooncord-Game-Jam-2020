@@ -1,7 +1,8 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Unity.Burst;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Mathematics;
@@ -44,8 +45,8 @@ public class PathfindingManager : MonoBehaviour
         {
             probeData[i] = new TilePathfindingData
             {
-                distance = int.MaxValue,
-                closestSeen = int.MaxValue,
+                distance = int.MaxValue - 1,
+                closestSeen = int.MaxValue - 1,
                 occupied = false
             };
         }
@@ -53,9 +54,10 @@ public class PathfindingManager : MonoBehaviour
         lightingManager.OnLightingProbesMoved += HandleProbesMoved;
     }
 
-    private void HandleProbesMoved()
+    private void HandleProbesMoved(float3 delta)
     {
-        
+        var intDif = (int3)math.round(delta);
+        //TODO: handle probe movement
     }
 
     private void OnDestroy()
@@ -73,20 +75,29 @@ public class PathfindingManager : MonoBehaviour
             //update data
             var currentData = probeData[testIndex];
             currentData.occupied = occupied;
-            probeData[testIndex] = currentData; 
+            probeData[testIndex] = new TilePathfindingData
+            {
+                closestSeen = currentData.closestSeen,
+                distance = currentData.distance,
+                occupied = currentData.occupied
+            }; 
 
             testIndex = (testIndex + 1) % lightingManager.totalProbes;
         }
 
         float3 playerPosition = PlayerCharacter.Instance.transform.position;
-        float2 playerPosRelative = (playerPosition - (float3)lightingManager.transform.position).xy;
+        float2 playerPosRelative = (playerPosition - lightingManager.getBottomLeft()).xy;
         if (math.all(new bool4(playerPosRelative > 0, playerPosRelative < lightingManager.ProbeCounts)))
         {
             int index = IndexFromPosition((int2) playerPosRelative, lightingManager.ProbeCounts);
             var current = probeData[index];
             int2 playerPosRounded = (int2)playerPosition.xy;
-            current.closestSeen = playerPosRounded;
-            probeData[index] = current;
+            probeData[index] = new TilePathfindingData
+            {
+                distance = 0,
+                closestSeen = playerPosRounded,
+                occupied = current.occupied
+            };
         }
         
         NativeArray<TilePathfindingData> output = new NativeArray<TilePathfindingData>(probeData.Length, Allocator.TempJob);
@@ -99,8 +110,23 @@ public class PathfindingManager : MonoBehaviour
         };
         var handle = job.Schedule(probeData.Length, 16);
         handle.Complete();
-        probeData.CopyFrom(output);
+        output.CopyTo(probeData);
         output.Dispose();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (lightingManager != null)
+        {
+            for (int i = 0; i < lightingManager.totalProbes; i++)
+            {
+                int2 pos = PositionFromIndex(i, lightingManager.ProbeCounts);
+                Vector3 gizmoPos = lightingManager.getBottomLeft() + new float3(pos.x, pos.y, 0);
+                int dist = probeData[i].distance;
+                Gizmos.color = new Color((float)dist/255, 0, 0);
+                Gizmos.DrawSphere(gizmoPos, 0.4f);
+            }
+        }
     }
 
     static int2 PositionFromIndex(int index, int2 probeCounts)
@@ -114,6 +140,7 @@ public class PathfindingManager : MonoBehaviour
         return pos.y * probeCounts.x + pos.x;
     }
     
+    [BurstCompile]
     struct UpdatePathfindingJob : IJobParallelFor
     {
         [ReadOnly]
@@ -126,19 +153,20 @@ public class PathfindingManager : MonoBehaviour
         public void Execute(int index)
         {
             int2 pos = PositionFromIndex(index, ProbeCounts);
-
+            var current = TileData[index];
 
             int2 playerPos = (int2)PlayerPosition.xy;
-            int2 closestSeen = int.MaxValue;
-            int smallestDist = int.MaxValue;
+            int2 closestSeen = int.MaxValue - 1;
+            int smallestDist = int.MaxValue - 1;
             for (int xOffset = -1; xOffset <= 1; xOffset++)
             {
                 for (int yOffset = -1; yOffset <= 1; yOffset++)
                 {
-                    var newPos = pos + new int2(xOffset, yOffset);
-                    if (math.any(new bool4(newPos < 0, newPos >= new int2(ProbeCounts.x, ProbeCounts.y))))
+                    int2 newPos = pos + new int2(xOffset, yOffset);
+                    if (math.any(new bool4(newPos < 0, newPos >= ProbeCounts)))
                         continue;
                     var data = TileData[IndexFromPosition(newPos, ProbeCounts)];
+                    smallestDist = math.min(smallestDist, data.distance);
                     if (!data.occupied)
                     {
                         if (math.all(playerPos == data.closestSeen))
@@ -146,16 +174,20 @@ public class PathfindingManager : MonoBehaviour
                             if (data.distance <= smallestDist)
                             {
                                 smallestDist = data.distance;
+                                closestSeen = playerPos;
                             }
                         }
                     }
                 }
             }
 
-            var current = TileData[index];
-            current.distance = smallestDist + 1;
-            current.closestSeen = closestSeen;
-            Output[index] = current;
+            
+            Output[index] = new TilePathfindingData
+            {
+                distance = smallestDist + 1,
+                closestSeen = closestSeen,
+                occupied = current.occupied
+            };
         }
     }
 }
