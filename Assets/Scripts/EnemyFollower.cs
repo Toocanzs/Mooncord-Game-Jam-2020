@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class EnemeyFollower : MonoBehaviour
+public class EnemyFollower : MonoBehaviour
 {
     public float speed = 5;
     void Start()
