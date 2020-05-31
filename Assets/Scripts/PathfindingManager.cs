@@ -170,7 +170,7 @@ public class PathfindingManager : MonoBehaviour
             testIndex = (testIndex + 1) % lightingManager.totalProbes;
         }
 
-        float3 playerPosition = PlayerCharacter.Instance.transform.position;
+        float3 playerPosition = PlayerCharacter.GetPostion();
         float2 playerPosRelative = (playerPosition - lightingManager.getBottomLeft()).xy;
         if (math.all(new bool4(playerPosRelative > 0, playerPosRelative < lightingManager.ProbeCounts)))
         {
@@ -193,7 +193,7 @@ public class PathfindingManager : MonoBehaviour
                 TileData = probeData,
                 ProbeCounts = lightingManager.ProbeCounts,
                 Output = output,
-                PlayerPosition = PlayerCharacter.Instance.transform.position
+                PlayerPosition = PlayerCharacter.GetPostion()
             };
             var handle = job.Schedule(probeData.Length, 8, dependency);
             dependency = handle;

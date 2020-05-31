@@ -15,6 +15,7 @@
         Cull Off
         Blend SrcAlpha OneMinusSrcAlpha
         ZWrite Off
+        ZTest always
         Pass
         {
             Tags { "LightMode"="Universal2D" }

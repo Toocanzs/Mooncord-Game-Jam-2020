@@ -1,10 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerCharacter : Character
 {
-    public static PlayerCharacter Instance;
+    private static PlayerCharacter Instance;
+
+    public static Vector3 GetPostion()
+    {
+        if (Instance == null)
+            return Vector3.zero;
+        return Instance.transform.position;
+    }
     // Start is called before the first frame update
     void Awake()
     {
@@ -17,6 +25,12 @@ public class PlayerCharacter : Character
 
         Instance = this;
     }
+
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
+
     void Start()
     {
         
