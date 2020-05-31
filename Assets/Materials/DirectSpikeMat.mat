@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: DirectSpikeMat
   m_Shader: {fileID: 4800000, guid: df747b4a672ff38439ac5b2187cddfce, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ISALIGHT_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,8 +25,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutout: 0.5
-    - _IsALight: 0
+    - _IsALight: 1
     m_Colors:
-    - _AdditiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission: {r: 0, g: 0, b: 0, a: 1}
+    - _AdditiveColor: {r: 0, g: 0.03982159, b: 0.05660379, a: 1}
+    - _Emission: {r: 0, g: 16.313726, b: 23.968628, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}

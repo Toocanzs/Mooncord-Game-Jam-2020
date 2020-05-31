@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SpikeParticles
-  m_Shader: {fileID: 4800000, guid: 44d87fff0d496704597d787d0e505dee, type: 3}
+  m_Shader: {fileID: 4800000, guid: b10b0f53c3479e940baaf05bbc39c0f2, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -28,5 +28,5 @@ Material:
     - _IsALight: 0
     m_Colors:
     - _AdditiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission: {r: 0, g: 0, b: 0, a: 1}
+    - _Emission: {r: 5.992157, g: 5.992157, b: 5.992157, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}

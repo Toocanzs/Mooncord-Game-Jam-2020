@@ -1,4 +1,4 @@
-﻿Shader "Unlit/SpriteTransparent"
+﻿Shader "Unlit/Emission from vertex color"
 {
     Properties
     {
@@ -125,8 +125,8 @@
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                clip(col.a - _Cutout);
-                return float4(i.color.rgb * col.a * i.color.a, _IsALight);
+                clip(col.a - 0.01);
+                return float4(_Emission * i.color.rgb * col.a * i.color.a, _IsALight);
             }
             ENDCG
         }

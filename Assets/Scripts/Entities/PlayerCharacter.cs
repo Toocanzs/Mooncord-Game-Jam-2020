@@ -8,6 +8,15 @@ public class PlayerCharacter : Character
 {
     private static PlayerCharacter Instance;
 
+    private Rigidbody2D rigidbody2D;
+
+    public static Vector2 GetVelocity()
+    {
+        if (Instance == null)
+            return Vector2.zero;
+        return Instance.rigidbody2D.velocity;
+    }
+
     public static Vector3 GetPostion()
     {
         if (Instance == null)
@@ -26,6 +35,8 @@ public class PlayerCharacter : Character
         }
 
         Instance = this;
+
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
     public static PlayerCharacter GetPlayerCharacter() {
         if (!Instance) {
