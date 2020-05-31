@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerCharacter : Character
 {
     private static PlayerCharacter Instance;
+    private bool disable_update;
 
     public static Vector3 GetPostion()
     {
@@ -44,24 +45,23 @@ public class PlayerCharacter : Character
         Instance = null;
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        if (disable_update) {
+            return;
+        }
         if (health_component.isDead()) {
-            // @TODO: animation
-            ControlManager.SetInputEnabled(false);
-            var game_ui = FindObjectOfType<GameUI>();
-            game_ui.SetPlayerDeath();
+            OnDeath();
         }
         
     }
 
     protected override void OnDeath() {
+        // @TODO: animation
+        ControlManager.SetInputEnabled(false);
+        var game_ui = FindObjectOfType<GameUI>();
+        game_ui.SetPlayerDeath();
+        disable_update = true;
         base.OnDeath();
     }
 }
