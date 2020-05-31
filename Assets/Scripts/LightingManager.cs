@@ -13,7 +13,7 @@ public class LightingManager : MonoBehaviour
     public int2 ProbeCounts = new int2(50, 30);
     public float2 followPercent = new float2(0.3f, 0.3f);
 
-    public RenderTexture WallBuffer;
+    public DoubleBuffer WallBuffer;
     public RenderTexture LightingPerProbeBuffer;
     public DoubleBuffer LightingPerPixelBuffer;
 
@@ -45,7 +45,7 @@ public class LightingManager : MonoBehaviour
         lightingCamera = GetComponent<Camera>();
 
         WallBuffer = new RenderTexture(ProbeCounts.x * PixelsPerUnit, ProbeCounts.y * PixelsPerUnit, 0,
-            RenderTextureFormat.DefaultHDR, RenderTextureReadWrite.Linear);
+            RenderTextureFormat.DefaultHDR, RenderTextureReadWrite.Linear).ToDoubleBuffer();
         WallBuffer.Create();
 
         LightingPerProbeBuffer = new RenderTexture(ProbeCounts.x, ProbeCounts.y, 0,
