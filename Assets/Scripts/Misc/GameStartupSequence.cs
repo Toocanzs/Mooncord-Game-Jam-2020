@@ -38,5 +38,13 @@ public class GameStartupSequence : MonoBehaviour
         ControlManager.SetInputEnabled(true);
         var game_camera = GameCamera.GetCamera();
         game_camera.StartFade(0f, 0f);
+        var game_cam = GameCamera.GetCamera();
+        var player_char = PlayerCharacter.GetPlayerCharacter();
+        var follow_comp = game_cam.GetComponent<CameraFollow>();
+        follow_comp.SetTarget(player_char.gameObject.transform);
+    }
+
+    public void SkipSequence() {
+
     }
 }
