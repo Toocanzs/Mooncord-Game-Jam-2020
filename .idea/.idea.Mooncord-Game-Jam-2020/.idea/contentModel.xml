@@ -54,8 +54,10 @@
             <e p="CameraFollow.cs" t="Include" />
             <e p="ControlManager.cs" t="Include" />
             <e p="GameCamera.cs" t="Include" />
+            <e p="GameStartupSequence.cs" t="Include" />
             <e p="GameState.cs" t="Include" />
             <e p="IntroManager.cs" t="Include" />
+            <e p="SequenceEvent.cs" t="Include" />
           </e>
           <e p="MyRenderer.cs" t="Include" />
           <e p="Objective.cs" t="Include" />
@@ -71,6 +73,8 @@
           <e p="UI" t="Include">
             <e p="GameMainMenu.cs" t="Include" />
             <e p="SkipIndicator.cs" t="Include" />
+            <e p="TextBubble.cs" t="Include" />
+            <e p="TextBubbleEvent.cs" t="Include" />
             <e p="TextElement.cs" t="Include" />
           </e>
           <e p="Vector2Extentions.cs" t="Include" />
