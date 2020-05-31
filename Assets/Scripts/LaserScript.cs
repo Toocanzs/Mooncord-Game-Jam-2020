@@ -29,12 +29,15 @@ public class LaserScript : MonoBehaviour
     {
         
         float eval = laserCurve.Evaluate(time);
+        Vector3 otherPos = lineRenderer.GetPosition(1);
+        Vector2 dif = otherPos - transform.position;
+        var angle = Vector2Extentions.GetAngle(dif);
+
+        transform.rotation = quaternion.Euler(0, 0, angle);
+
         if (eval > 0.7 && !didHurt)
         {
             didHurt = true;
-            Vector3 otherPos = lineRenderer.GetPosition(1);
-            Vector2 dif = otherPos - transform.position;
-            var angle = Vector2Extentions.GetAngle(dif);
             var go = Instantiate(hurtPrefab, transform.position, quaternion.Euler(0, 0, angle));
             //TODO: add damage to hurt prefab
             go.transform.localScale = new Vector3(dif.magnitude, 1, 1);
