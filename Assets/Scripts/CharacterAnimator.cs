@@ -27,7 +27,7 @@ public class CharacterAnimator : MonoBehaviour
         if(vx + vy > 0.01f) {
             animator.SetBool("walking", true);
             var mag = vx + vy;
-            var char_movement = GetComponent<PlayerMovement>();
+            var char_movement = GetComponent<CharacterMovement>();
             var mag_alpha = mag / char_movement.move_speed;
             var walk_animation_speed = Mathf.Lerp(1f, 2f, mag_alpha);
             animator.SetFloat("walk_speed", walk_animation_speed);

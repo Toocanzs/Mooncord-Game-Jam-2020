@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : CharacterMovement
 {
-    public float move_speed;
     public float dash_velocity;
     public float dash_duration;
     public float dash_cooldown;

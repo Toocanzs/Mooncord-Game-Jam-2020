@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug_disable: 0
+  room_exit_fade_out_time: 1.5
+  room_enter_fade_in_time: 1.5
   room_prefabs:
   - {fileID: 7339694114093653260, guid: 0a68e64e4ec00f3469263fe405489dec, type: 3}
 --- !u!114 &7466147677674905585

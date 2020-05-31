@@ -335,6 +335,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7466147677674905585, guid: 080282fe698a85340b920ccb7540956f,
+        type: 3}
+      propertyPath: debug_disable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7466147677674905597, guid: 080282fe698a85340b920ccb7540956f,
         type: 3}
       propertyPath: m_Name

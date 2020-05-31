@@ -5,6 +5,8 @@ using UnityEngine;
 public class RoomExit : MonoBehaviour
 {
 
+    public RoomRelativeDirection exit_direction;
+
     public void SetExitable() {
         var exit_trigger = GetComponent<Collider2D>();
         if (exit_trigger == null) {

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SpawnDirection { NORTH, EAST, SOUTH, WEST };
+public enum RoomRelativeDirection { NORTH, EAST, SOUTH, WEST };
 
 public class PlayerSpawn : MonoBehaviour
 {
-    public SpawnDirection spawn_direction;
+    public RoomRelativeDirection spawn_direction;
 }
