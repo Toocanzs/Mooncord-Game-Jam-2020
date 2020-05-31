@@ -9,6 +9,13 @@ public class GameState : MonoBehaviour
     void Start()
     {
         if (debug_disable) {
+            var game_camera = GameCamera.GetCamera();
+            var cam_follow = game_camera.GetComponent<CameraFollow>();
+            var player = PlayerCharacter.GetPlayerCharacter();
+            if (!player) {
+                Debug.LogError("player invalid");
+            }
+            cam_follow.SetTarget(player.gameObject.transform);
             return;
         }
         var startup_sequence = GetComponent<GameStartupSequence>();
@@ -17,13 +24,6 @@ public class GameState : MonoBehaviour
             return;
         }
         startup_sequence.StartGameIntroSequence();
-        //ControlManager.SetInputEnabled(false);
-        //var game_camera = GameCamera.GetCamera();
-        //game_camera.StartFade(0f, 1f);
-        //game_camera.StartFade(1.5f, 0f, () => {
-        //    //var control_manager = GetComponent<ControlManager>();
-        //    ControlManager.SetInputEnabled(true);
-        //});
     }
 
     // Update is called once per frame
