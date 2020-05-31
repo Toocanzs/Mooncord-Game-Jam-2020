@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6900896340513076259}
   - component: {fileID: 6900896340513076268}
   - component: {fileID: 6900896340513076269}
+  - component: {fileID: 1924111377}
   m_Layer: 0
   m_Name: --Lighting System--
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Camera:
   m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 1792
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -129,13 +130,13 @@ MonoBehaviour:
   followPercent:
     x: 0.3
     y: 0.3
-  WallBuffer: {fileID: 0}
   LightingPerProbeBuffer: {fileID: 0}
   TransferToFullscreenMaterial: {fileID: 2100000, guid: cf0cfeebbe34f5b4c8addf9b145ca22e,
     type: 2}
   TransferValidDataMaterial: {fileID: 2100000, guid: 7116922a8e66bc14e83b30436157dd5f,
     type: 2}
   hysteresis: 4
+  noiseMultiplier: 2
 --- !u!114 &6900896340513076269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +149,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943ac6590bb10004c842584009cfaed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1924111377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6900896340513076270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df5c602c0b591dd4898a4cd374fd92f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestsPerFrame: 70
+  pathfindingBlockingLayers:
+    serializedVersion: 2
+    m_Bits: 256

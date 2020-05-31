@@ -21882,28 +21882,6 @@ MonoBehaviour:
   numLasers: 3
   laserFireTime: 0.5
   numberOfTargets: 0
---- !u!1 &1924111376 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6900896340513076270, guid: 9688b13ea01125048952492e083350b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 6900896339573232763}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1924111377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924111376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df5c602c0b591dd4898a4cd374fd92f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TestsPerFrame: 70
-  pathfindingBlockingLayers:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!1 &2001112226
 GameObject:
   m_ObjectHideFlags: 0
@@ -22170,11 +22148,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900896340513076258, guid: 9688b13ea01125048952492e083350b9,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 1792
       objectReference: {fileID: 0}
     - target: {fileID: 6900896340513076270, guid: 9688b13ea01125048952492e083350b9,
         type: 3}
