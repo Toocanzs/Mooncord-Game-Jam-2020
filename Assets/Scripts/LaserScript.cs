@@ -27,6 +27,11 @@ public class LaserScript : MonoBehaviour
 
     void Update()
     {
+        var hit = Physics2D.Raycast(transform.position, initialDirection, float.PositiveInfinity, wallLayers);
+        if (hit.collider != null)
+        {
+            lineRenderer.SetPosition(1, hit.point);
+        }
         
         float eval = laserCurve.Evaluate(time);
         Vector3 otherPos = lineRenderer.GetPosition(1);
@@ -48,11 +53,7 @@ public class LaserScript : MonoBehaviour
             lineRenderer.SetPosition(0, (Vector2)transform.position);
         }
         
-        var hit = Physics2D.Raycast(transform.position, initialDirection, float.PositiveInfinity, wallLayers);
-        if (hit.collider != null)
-        {
-            lineRenderer.SetPosition(1, hit.point);
-        }
+        
         var width = eval * laserWidth;
         lineRenderer.widthMultiplier = width;
         if(time > 1f)
