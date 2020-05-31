@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    public float max_health;
-    private float current_health;
+    public int max_health;
+    private int current_health;
 
-    public float Health {
+    public int Health {
         get { return current_health; }
     }
 
@@ -16,13 +16,13 @@ public class HealthComponent : MonoBehaviour
     }
 
 
-    public void ChangeHealth(float value) {
+    public void ChangeHealth(int value) {
         //Debug.Log("health changed by " + value);
-        current_health = Mathf.Clamp(current_health + value, 0f, max_health);
+        current_health = Mathf.Clamp(current_health + value, 0, max_health);
     }
 
     public bool isDead() {
-        return current_health == 0f;
+        return current_health == 0;
     }
        
 }

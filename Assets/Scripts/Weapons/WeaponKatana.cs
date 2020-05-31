@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponKatana : Weapon
 {
     public float swing_time_total;
-    public float health_change_value;
+    public int health_change_value;
     private float swing_time_current;
     private float swing_start_rotation;
     private float start_direcition;

@@ -19,7 +19,7 @@ public abstract class WeaponProjectile : MonoBehaviour
     private Team team;
 
     public bool can_friendly_fire;
-    public float health_change_on_impact;
+    public int health_change_on_impact;
     public float speed_initial;
     //public Vector2 velocity_change_amount;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickup : Pickupable, IPikcupable
 {
-    public float health_amount;
+    public int health_amount;
 
     public void DisplayPickupKey() {
     }
