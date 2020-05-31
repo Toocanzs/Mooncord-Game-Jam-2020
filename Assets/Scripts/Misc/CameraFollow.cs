@@ -46,6 +46,7 @@ public class CameraFollow : MonoBehaviour
         Vector2 target = (Vector2)target_transform.position + clampedOffset / 2.5f;
 
         var final_target = new Vector3(target.x, target.y, -10f);
+        //var final_target = new Vector3(target.x, target.y, 0f);
         transform.position = Vector3.SmoothDamp(transform.position, final_target, ref followVelocity, FollowDelay);
     }
 

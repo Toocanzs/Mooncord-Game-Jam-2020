@@ -10,9 +10,12 @@ public class EnemyMelee : MonoBehaviour
 
     private float attack_cooldown_remain;
     private Collider2D melee_collider;
+    private Animator animator;
+    private Transform last_attacked_transform; // eh, kinda jank
 
     private void Awake() {
         melee_collider = GetComponentInChildren<Collider2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -20,6 +23,7 @@ public class EnemyMelee : MonoBehaviour
     }
 
     private void Update() {
+        attack_cooldown_remain = Mathf.Max(0f, attack_cooldown_remain - Time.deltaTime);
         if (CanAttack()) {
             ContactFilter2D filter = new ContactFilter2D();
             List<Collider2D> results = new List<Collider2D>();
@@ -32,10 +36,16 @@ public class EnemyMelee : MonoBehaviour
                 }
             });
             if (player_object != null) {
+                last_attacked_transform = player_object.transform;
+                animator.SetTrigger("bite");
                 var health_component = player_object.GetComponent<HealthComponent>();
                 health_component.ChangeHealth(attack_health_change);
-                Debug.Log("ATTACKING");
+                attack_cooldown_remain = attack_cooldown;
             }
+        }
+        if(animator.GetCurrentAnimatorStateInfo(0).IsName("bite_anim_01") && last_attacked_transform){
+            var bite_sprites = transform.Find("bite_sprites");
+            bite_sprites.transform.position = last_attacked_transform.position + (transform.position - last_attacked_transform.position) / 2f;
         }
     }
 
