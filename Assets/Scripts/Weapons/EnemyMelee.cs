@@ -12,8 +12,15 @@ public class EnemyMelee : MonoBehaviour
     private Collider2D melee_collider;
     private Animator animator;
     private Transform last_attacked_transform; // eh, kinda jank
+    private AIBrain brain;
+    //private bool is_enabled;
 
     private void Awake() {
+        brain = transform.parent.gameObject.GetComponent<AIBrain>();
+        if (!brain) {
+            Debug.LogWarning("Enemey Melee can't find brain!");
+        }
+        //is_enabled = true;
         melee_collider = GetComponentInChildren<Collider2D>();
         animator = GetComponentInChildren<Animator>();
     }
@@ -22,7 +29,17 @@ public class EnemyMelee : MonoBehaviour
         
     }
 
+    //public void SetAttackEnabled(bool value) {
+    //    is_enabled = value;
+    //}
+
     private void Update() {
+        //if (!is_enabled)
+        //    return;
+        if(!brain || !brain.IsBrainEnabled()) {
+            return;
+        }
+
         attack_cooldown_remain = Mathf.Max(0f, attack_cooldown_remain - Time.deltaTime);
         if (CanAttack()) {
             ContactFilter2D filter = new ContactFilter2D();

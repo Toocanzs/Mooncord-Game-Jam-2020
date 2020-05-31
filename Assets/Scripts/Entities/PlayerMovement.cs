@@ -27,7 +27,7 @@ public class PlayerMovement : CharacterMovement
         }
 
     }
-    public void StopMovement() {
+    public override void StopMovement() {
         rigid_body.velocity = Vector2.zero;
     }
 
