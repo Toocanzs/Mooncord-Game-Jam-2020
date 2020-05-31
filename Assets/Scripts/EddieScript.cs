@@ -29,7 +29,7 @@ public class EddieScript : MonoBehaviour
     public int numLasers = 4;
     public float laserFireTime = 0.5f;
 
-    public int numberOfTargets;
+    public int numberOfTargets = 1;
     //public bool 
 
     void Start()
