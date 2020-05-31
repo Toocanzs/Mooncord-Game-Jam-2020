@@ -15,7 +15,7 @@ public class RoomManager : MonoBehaviour
     private static RoomManager instance;
 
     private void Awake() {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         if(instance == null) {
             instance = this;
         }
