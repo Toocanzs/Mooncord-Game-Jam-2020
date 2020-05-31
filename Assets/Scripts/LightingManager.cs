@@ -110,7 +110,7 @@ public class LightingManager : MonoBehaviour
     
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
+        /*Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector3(ProbeCounts.x, ProbeCounts.y, 0));
 
         Gizmos.color = Color.green;
@@ -123,7 +123,7 @@ public class LightingManager : MonoBehaviour
             {
                 Gizmos.DrawSphere(transform.position + new Vector3(x - ProbeCounts.x/2f, y  - ProbeCounts.y/2f, 0), 0.1f);
             }
-        }
+        }*/
         
     }
 }

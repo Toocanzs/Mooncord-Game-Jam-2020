@@ -53,11 +53,13 @@
           <e p="Misc" t="Include">
             <e p="CameraFollow.cs" t="Include" />
             <e p="ControlManager.cs" t="Include" />
+            <e p="FadeCameraEvent.cs" t="Include" />
             <e p="GameCamera.cs" t="Include" />
             <e p="GameStartupSequence.cs" t="Include" />
             <e p="GameState.cs" t="Include" />
             <e p="IntroManager.cs" t="Include" />
             <e p="SequenceEvent.cs" t="Include" />
+            <e p="ShowMoonBarEvent.cs" t="Include" />
           </e>
           <e p="MyRenderer.cs" t="Include" />
           <e p="Objective.cs" t="Include" />
