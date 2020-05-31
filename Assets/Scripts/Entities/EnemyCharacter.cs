@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyCharacter : Character
 {
     private bool update_disabled;
+    public bool can_drop_health = true;
 
     void Start()
     {
@@ -36,10 +37,29 @@ public class EnemyCharacter : Character
         brain.EnableBrain(false);
         var movement = GetComponent<CharacterMovement>();
         movement.StopMovement();
+        TryDropItem();
         var delay_seq = DOTween.Sequence();
         delay_seq.SetDelay(2.0f).OnComplete(() => {
             delay_seq = null;
             Destroy(gameObject);
         });
+    }
+
+    protected void TryDropItem() {
+        var item_dropper = GetComponent<ItemDropper>();
+        if (item_dropper && can_drop_health) {
+            var character = PlayerCharacter.GetPlayerCharacter();
+            var health_component = character.GetComponent<HealthComponent>();
+            var health_percent = (float)health_component.Health / (float)health_component.max_health;
+            var random_val = Random.Range(0f, 1f);
+            var health_chance_result = random_val - health_percent - .15f;
+            //Debug.Log("healthr random result: " + health_chance_result + " " + random_val + " " + health_percent);
+            if(health_chance_result > 0f) {
+                item_dropper.DropHealth();
+            }
+        }
+        if (item_dropper) {
+            item_dropper.DropItem();
+        }
     }
 }
