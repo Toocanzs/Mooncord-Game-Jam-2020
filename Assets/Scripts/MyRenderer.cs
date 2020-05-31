@@ -14,7 +14,7 @@ public class MyRenderer : ScriptableRenderer
     private static ComputeShader computeShader = Resources.Load<ComputeShader>("LightingShader");
     private int raycastKernel = computeShader.FindKernel("LightingRaycast");
 
-    private int randomIndex = 0;
+    private float randomIndex = 0;
 
     public MyRenderer(ScriptableRendererData data) : base(data)
     {
@@ -31,6 +31,9 @@ public class MyRenderer : ScriptableRenderer
         if (manager != null)
         {
             Shader.SetGlobalFloat("hysteresis", Time.deltaTime * LightingManager.Instance.hysteresis);
+            randomIndex += manager.noiseMultiplier * Time.deltaTime;
+            if (randomIndex > short.MaxValue)
+                randomIndex = 0;
         }
     }
 
@@ -79,7 +82,7 @@ public class MyRenderer : ScriptableRenderer
                 command.Blit(manager.LightingPerProbeBuffer, manager.LightingPerPixelBuffer.Other, manager.TransferToFullscreenMaterial);
                 manager.LightingPerPixelBuffer.Swap();
 
-                randomIndex += 4;
+                
             }
             else
             {

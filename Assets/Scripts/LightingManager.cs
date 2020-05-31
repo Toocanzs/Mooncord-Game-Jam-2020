@@ -25,6 +25,8 @@ public class LightingManager : MonoBehaviour
     public int totalProbes => ProbeCounts.x * ProbeCounts.y;
     public event Action<float3> OnLightingProbesMoved = delegate { };
 
+    public float noiseMultiplier = 2;
+
     public void Awake()
     {
         if (Instance != null)
