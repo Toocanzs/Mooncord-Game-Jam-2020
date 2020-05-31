@@ -16,7 +16,7 @@ public class TextBubble : MonoBehaviour
 
     private void Update() {
         if (anchor_transform) {
-            transform.position = transform.position;
+            transform.position = anchor_transform.position;
         }
     }
 }
