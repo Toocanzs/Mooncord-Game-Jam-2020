@@ -9,7 +9,7 @@ public class TextElement : MonoBehaviour
 {
 
     public bool start_hidden;
-    private TextMeshProUGUI text_component;
+    private TMP_Text text_component;
     private bool next_pressed;
     private bool is_revealing;
     private DG.Tweening.Core.TweenerCore<int, int, DG.Tweening.Plugins.Options.NoOptions> reveal_tween;
@@ -17,11 +17,15 @@ public class TextElement : MonoBehaviour
 
     void Awake()
     {
-        text_component = GetComponentInChildren<TextMeshProUGUI>();
+        text_component = GetComponentInChildren<TMP_Text>();
         if (start_hidden) {
             text_component.maxVisibleCharacters = 0;
             is_revealing = true;
         }
+    }
+
+    public void SetText(string text) {
+        text_component.text = text;
     }
 
     public void StartHidden(bool value) {

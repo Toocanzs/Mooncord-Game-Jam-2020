@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerCharacter : Character
@@ -13,7 +14,7 @@ public class PlayerCharacter : Character
             return Vector3.zero;
         return Instance.transform.position;
     }
-    // Start is called before the first frame update
+
     void Awake()
     {
         if (Instance != null)
@@ -24,6 +25,17 @@ public class PlayerCharacter : Character
         }
 
         Instance = this;
+    }
+    public static PlayerCharacter GetPlayerCharacter() {
+        if (!Instance) {
+            Debug.LogError("Trying to get PlayerCharacter Instance that is null!");
+        }
+        return Instance;
+
+    }
+
+    public Transform GetTextBubbleAnchor() {
+        return transform.Find("text_bubble_anchor");
     }
 
     private void OnDestroy()
