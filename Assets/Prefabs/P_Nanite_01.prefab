@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 706496743858182393}
   - component: {fileID: 7048890283568297899}
   - component: {fileID: 2420538429110011521}
+  - component: {fileID: 7361644493792247962}
   m_Layer: 0
   m_Name: P_Nanite_01
   m_TagString: Untagged
@@ -589,6 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d51a90c75993d4247a382f725470ffe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  can_drop_health: 1
 --- !u!114 &8940686002553319244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,3 +648,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7361644493792247962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8751948770931624662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 844b21d190fe2ce409da0f50911d95a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health_drop_weights:
+  - weight: 4
+    prefab: {fileID: 7574484345599373830, guid: 12016b744bd11ff438a193d61f7302f5,
+      type: 3}
+  - weight: 1
+    prefab: {fileID: 7574484345599373830, guid: b7775ff7aafba824488d1bc05993ce3b,
+      type: 3}
+  item_drop_weights: []

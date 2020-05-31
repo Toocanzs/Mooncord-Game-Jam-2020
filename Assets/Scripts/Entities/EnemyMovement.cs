@@ -26,6 +26,11 @@ public class EnemyMovement : CharacterMovement
         }
     }
 
+    public override void StopMovement() {
+        base.StopMovement();
+        rigid_body.velocity = Vector2.zero;
+    }
+
     public override void AddPush(Vector2 velocity) {
         base.AddPush(velocity);
         push_time_remaining = 0.2f;

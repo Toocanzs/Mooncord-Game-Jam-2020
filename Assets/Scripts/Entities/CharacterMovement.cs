@@ -7,6 +7,9 @@ public class CharacterMovement : MonoBehaviour
     protected virtual void Awake() {
 
     }
+    public virtual void StopMovement() {
+
+    }
 
     public virtual void AddPush(Vector2 velocity) {
 

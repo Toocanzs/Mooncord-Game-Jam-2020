@@ -41,5 +41,9 @@ public class CharacterAnimator : MonoBehaviour
                 sprite_renderers.ForEach(x => x.flipX = true);
             }
         }
+        var health_component = GetComponent<HealthComponent>();
+        if (health_component && health_component.isDead()) {
+            animator.SetTrigger("death");
+        }
     }
 }
