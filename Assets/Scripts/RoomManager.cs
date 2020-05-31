@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    public bool debug_disable;
     public List<GameObject> room_prefabs = new List<GameObject>();
     private Room active_room_instance;
     private int current_room_index;
@@ -19,6 +20,9 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
+        if (debug_disable) {
+            return;
+        }
         if(room_prefabs.Count == 0) {
             Debug.LogWarning("Please assign some Rooms to the RoomManager!");
             return;

@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Laser Material
+  m_Name: targeting
   m_Shader: {fileID: 4800000, guid: df747b4a672ff38439ac5b2187cddfce, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _ISALIGHT_ON
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,13 +20,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2c48399fd34dc844194b72436a3fbef3, type: 3}
+        m_Texture: {fileID: -4977975395296579284, guid: c325b4baeee5e924e8e4dfd4fe741f9f,
+          type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Cutout: 0.5
-    - _IsALight: 1
+    - _IsALight: 0
     m_Colors:
     - _AdditiveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission: {r: 4, g: 0, b: 0, a: 1}
-    - _TintColor: {r: 1, g: 0, b: 0, a: 1}
+    - _Emission: {r: 0, g: 0, b: 0, a: 1}
+    - _TintColor: {r: 1, g: 1, b: 1, a: 1}

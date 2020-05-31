@@ -17,7 +17,8 @@ public class EddieScript : MonoBehaviour
     {
         IDLE,
         RUNNING,
-        FIRING_LASER
+        FIRING_LASER,
+        TARGETING
     }
 
     private State currentState = State.IDLE;
@@ -28,11 +29,14 @@ public class EddieScript : MonoBehaviour
     public int numLasers = 4;
     public float laserFireTime = 0.5f;
 
+    public int numberOfTargets;
+    //public bool 
+
     void Start()
     {
         ChangeState(State.IDLE);
     }
-    
+
     void Update()
     {
         switch (currentState)
@@ -48,11 +52,12 @@ public class EddieScript : MonoBehaviour
                 {
                     ChangeState(State.FIRING_LASER, 3);
                 }
-            } break;
+            }
+                break;
             case State.RUNNING:
             {
-                
-            } break;
+            }
+                break;
             case State.FIRING_LASER:
             {
                 float angle = Vector2Extentions.GetAngle((PlayerCharacter.GetPostion() - laserSpawnPosition.position).normalized);
@@ -63,12 +68,18 @@ public class EddieScript : MonoBehaviour
                     float angleOffset = (percent * 0.6f) + Random.Range(-0.1f, 0.1f);
                     if (i == numLasers / 2)
                         angleOffset = 0;
-                    quaternion rot = quaternion.Euler(0,0, angle + angleOffset);
-                    float fireWaitTime = ((float)i /numLasers) * (laserFireTime + numLasers * 0.05f);
-                    
+                    quaternion rot = quaternion.Euler(0, 0, angle + angleOffset);
+                    float fireWaitTime = ((float) i / numLasers) * (laserFireTime + numLasers * 0.05f);
+
                     StartCoroutine(FireSingleLaser(rot, fireWaitTime));
                 }
-                ChangeState(State.IDLE, laserFireTime  + numLasers * 0.05f + Random.Range(0.5f,1f));
+
+                ChangeState(State.IDLE, laserFireTime + numLasers * 0.05f + Random.Range(0.5f, 1f));
+            }
+                break;
+            case State.TARGETING:
+            {
+                ChangeState(State.IDLE, laserFireTime + numLasers * 0.05f + Random.Range(0.5f, 1f));
             } break;
             default:
                 Debug.LogError($"Unhandled state {currentState}");
