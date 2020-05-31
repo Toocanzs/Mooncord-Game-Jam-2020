@@ -27,6 +27,9 @@ public class PlayerMovement : CharacterMovement
         }
 
     }
+    public void StopMovement() {
+        rigid_body.velocity = Vector2.zero;
+    }
 
     void FixedUpdate()
     {

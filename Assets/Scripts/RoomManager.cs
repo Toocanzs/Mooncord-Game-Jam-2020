@@ -54,7 +54,7 @@ public class RoomManager : MonoBehaviour
             var room_component = room_instance.GetComponent<Room>();
             instance.active_room_instance = room_component;
             var game_camera = GameCamera.GetCamera();
-            game_camera.StartFade(instance.room_exit_fade_out_time, 1f, () => {
+            game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
                 ControlManager.SetInputEnabled(true);
                 room_component.ActivateRoom();
             });

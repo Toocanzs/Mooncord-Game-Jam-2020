@@ -58,6 +58,8 @@ public class PlayerCharacter : Character
 
     protected override void OnDeath() {
         // @TODO: animation
+        var movement = GetComponent<PlayerMovement>();
+        movement.StopMovement();
         ControlManager.SetInputEnabled(false);
         var game_ui = FindObjectOfType<GameUI>();
         game_ui.SetPlayerDeath();

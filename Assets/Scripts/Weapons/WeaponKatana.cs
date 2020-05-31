@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WeaponKatana : Weapon
 {
     public float swing_time_total;
     public int health_change_value;
+    public float pushback_speed;
     private float swing_time_current;
     private float swing_start_rotation;
     private float start_direcition;
@@ -53,9 +55,20 @@ public class WeaponKatana : Weapon
                 var owner_team_component = owner.GetComponent<TeamComponent>();
                 if (team_component.Team != owner_team_component.Team) {
                     health_component.ChangeHealth(health_change_value);
+                    var movement_componet = collision.gameObject.GetComponent<CharacterMovement>();
+                    if (movement_componet) {
+                        movement_componet.AddPush(GetPushbackVelocity(collision.gameObject));
+                    }
                 }
             }
         }
+    }
+
+    private Vector2 GetPushbackVelocity(GameObject target) {
+        var position_diff = target.transform.position - owner.transform.position;
+        position_diff.Normalize();
+        return position_diff * pushback_speed;
+
     }
 
 
