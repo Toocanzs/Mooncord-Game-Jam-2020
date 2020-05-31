@@ -52,7 +52,7 @@
             int2 ProbeCounts;
             int PixelsPerUnit;
             
-            float3 _TintColor;
+            float4 _TintColor;
             float3 _AdditiveColor;
 
 
@@ -77,7 +77,7 @@
                 col.rgb *= tex2D(_LightTexture, getLightUv(i.worldPos)) * i.color.rgb;
                 col.rgb *= _TintColor;
                 col.rgb += _AdditiveColor;
-                col.a *= i.color.a;
+                col.a *= i.color.a * _TintColor.a;
                 return col;
             }
             ENDCG

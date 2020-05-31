@@ -14,7 +14,7 @@ public class MyRenderer : ScriptableRenderer
     private static ComputeShader computeShader = Resources.Load<ComputeShader>("LightingShader");
     private int raycastKernel = computeShader.FindKernel("LightingRaycast");
 
-    private int randomIndex = 0;
+    private float randomIndex = 0;
 
     public MyRenderer(ScriptableRendererData data) : base(data)
     {
@@ -31,6 +31,9 @@ public class MyRenderer : ScriptableRenderer
         if (manager != null)
         {
             Shader.SetGlobalFloat("hysteresis", Time.deltaTime * LightingManager.Instance.hysteresis);
+            randomIndex += manager.noiseMultiplier * Time.deltaTime;
+            if (randomIndex > short.MaxValue)
+                randomIndex = 0;
         }
     }
 
@@ -53,12 +56,16 @@ public class MyRenderer : ScriptableRenderer
                     float2 offset = difference / (manager.ProbeCounts);
                     manager.TransferValidDataMaterial.SetVector("_Offset", offset.xyxy);
                     command.Blit(manager.LightingPerPixelBuffer.Current, manager.LightingPerPixelBuffer.Other, manager.TransferValidDataMaterial);
+                    command.Blit(manager.WallBuffer.Current, manager.WallBuffer.Other, manager.TransferValidDataMaterial);
+                    context.ExecuteCommandBuffer(command);
+                    command.Clear();
                     manager.LightingPerPixelBuffer.Swap();
+                    manager.WallBuffer.Swap();
                 }
 
                 
 
-                command.SetComputeTextureParam(computeShader, raycastKernel, "WallBuffer", manager.WallBuffer);
+                command.SetComputeTextureParam(computeShader, raycastKernel, "WallBuffer", manager.WallBuffer.Current);
                 command.SetComputeTextureParam(computeShader, raycastKernel, "LightingPerProbeBuffer", manager.LightingPerProbeBuffer);
 
                 command.SetComputeIntParam(computeShader, "RayCount", manager.RayCount);
@@ -69,17 +76,23 @@ public class MyRenderer : ScriptableRenderer
                 float2 randomProbeOffset = new float2(UnityEngine.Random.Range(-0.5f,0.5f), UnityEngine.Random.Range(-0.5f,0.5f));
                 command.SetComputeVectorParam(computeShader, "RandomProbeOffset", randomProbeOffset.xyxy);
                 
-                float goldenRatio = (1 + math.sqrt(5)) / 2;
-                float randomRayOffset = randomIndex * 2 * math.PI * (goldenRatio - 1);
+                float goldenRatio = (1f + math.sqrt(5)) / 2f;
+                float randomRayOffset = randomIndex * 2f * math.PI * (goldenRatio - 1f);
                 command.SetComputeFloatParam(computeShader, "RandomRayOffset", randomRayOffset);
                 command.DispatchCompute(computeShader, raycastKernel, (manager.ProbeCounts.x + 63) / 64, manager.ProbeCounts.y, 1);
-
+                context.ExecuteCommandBuffer(command);
+                command.Clear();
+                
                 manager.TransferToFullscreenMaterial.SetVector("_Offset", new float4(-randomProbeOffset / manager.ProbeCounts, 0, 0));
                 manager.TransferToFullscreenMaterial.SetTexture("_PreviousFullScreenTex", manager.LightingPerPixelBuffer.Current);
+                
                 command.Blit(manager.LightingPerProbeBuffer, manager.LightingPerPixelBuffer.Other, manager.TransferToFullscreenMaterial);
+                context.ExecuteCommandBuffer(command);
+                command.Clear();
+                
                 manager.LightingPerPixelBuffer.Swap();
 
-                randomIndex += 4;
+                
             }
             else
             {
@@ -92,6 +105,7 @@ public class MyRenderer : ScriptableRenderer
 
 
         context.ExecuteCommandBuffer(command);
+        command.Clear();
         command.Release();
     }
 
@@ -132,7 +146,7 @@ public class Lighting2DPass : ScriptableRenderPass
 
         if (camera.TryGetComponent<LightingCameraTag>(out _) && manager != null)
         {
-            identifier = manager.WallBuffer;
+            identifier = manager.WallBuffer.Current;
             tags = lightTags;
         }
 

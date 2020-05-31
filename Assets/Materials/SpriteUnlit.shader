@@ -1,4 +1,4 @@
-﻿Shader "Unlit/SpriteCutoutTransparent"
+﻿Shader "Unlit/SpriteCutoutUnlit"
 {
     Properties
     {
@@ -43,7 +43,7 @@
             sampler2D _MainTex;
             float4 _MainTex_ST;
             
-            float3 _TintColor;
+            float4 _TintColor;
             float3 _AdditiveColor;
 
             v2f vert (appdata v)
@@ -58,7 +58,7 @@
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 col = tex2D(_MainTex, i.uv) * i.color;
+                fixed4 col = tex2D(_MainTex, i.uv) * i.color * _TintColor;
                 //col.rgb *= _TintColor;
                 //col.rgb += _AdditiveColor;
                 return col;
