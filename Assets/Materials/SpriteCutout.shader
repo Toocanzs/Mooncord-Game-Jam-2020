@@ -17,6 +17,7 @@
     {
         Tags { "RenderType"="Opaque"}
         Cull Off
+        ZTest Always
         Pass
         {
             Tags { "LightMode"="Universal2D" }
