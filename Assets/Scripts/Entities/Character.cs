@@ -6,7 +6,7 @@ public abstract class Character : MonoBehaviour
 {
 
     protected HealthComponent health_component;
-    private void Awake() {
+    virtual protected void Awake() {
         health_component = GetComponent<HealthComponent>();
         if (!health_component) {
             Debug.LogError("Character type requires HealthComponent!");

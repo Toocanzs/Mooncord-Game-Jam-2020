@@ -15,8 +15,9 @@ public class PlayerCharacter : Character
         return Instance.transform.position;
     }
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         if (Instance != null)
         {
             Destroy(this);
@@ -51,6 +52,12 @@ public class PlayerCharacter : Character
     // Update is called once per frame
     void Update()
     {
+        if (health_component.isDead()) {
+            // @TODO: animation
+            ControlManager.SetInputEnabled(false);
+            var game_ui = FindObjectOfType<GameUI>();
+            game_ui.SetPlayerDeath();
+        }
         
     }
 
