@@ -7,12 +7,17 @@ public abstract class Weapon : MonoBehaviour
 {
     public bool is_droppable;
     public float fire_cooldown;
+    public FloatRange fire_cooldown_limits;
     public int max_ammo;
     public GameObject projectile;
 
     protected float fire_cooldown_remaining;
     protected int current_ammo;
     protected GameObject owner;
+
+    public virtual void ChangeFireCooldownBy(float value) {
+        fire_cooldown = Mathf.Clamp(fire_cooldown + value, fire_cooldown_limits.min, fire_cooldown_limits.max);
+    }
 
     protected virtual void Update()
     {

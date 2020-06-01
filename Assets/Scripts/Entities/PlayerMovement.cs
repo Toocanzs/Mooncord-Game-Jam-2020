@@ -8,7 +8,6 @@ public class PlayerMovement : CharacterMovement
     public float dash_duration;
     public float dash_cooldown;
 
-    private SpriteRenderer character_sprite;
     private Rigidbody2D rigid_body;
     private float dash_cooldown_remaining;
     private float dash_active_time_remaining;
@@ -18,7 +17,6 @@ public class PlayerMovement : CharacterMovement
     void Start()
     {
         rigid_body = GetComponent<Rigidbody2D>();
-        character_sprite = GetComponent<SpriteRenderer>();
         var weapon_transform = transform.Find("weapon_position");
         if (!weapon_transform) {
             Debug.LogError("Unable to find weapon position transform");
@@ -38,6 +36,10 @@ public class PlayerMovement : CharacterMovement
         }
         UpdateMovement();
         SetWeaponTransform();
+    }
+
+    public void ChangeSpeedBy(float value) {
+        move_speed = Mathf.Clamp(move_speed + value, move_speed_limits.min, move_speed_limits.max);
     }
 
     private void UpdateMovement() {

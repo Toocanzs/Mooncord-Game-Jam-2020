@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public enum HintType { SPRINT, EXITS }
+public enum HintType { SPRINT, EXITS, ITEM_GREASE }
 
 public class HintUIElement : MonoBehaviour
 {

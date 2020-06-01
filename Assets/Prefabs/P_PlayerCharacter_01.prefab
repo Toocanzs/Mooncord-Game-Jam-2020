@@ -419,6 +419,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 6
+  move_speed_limits:
+    min: 6
+    max: 8
   dash_velocity: 18
   dash_duration: 0.15
   dash_cooldown: 1

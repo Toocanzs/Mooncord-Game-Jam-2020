@@ -63,6 +63,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_droppable: 0
   fire_cooldown: 0.4
+  fire_cooldown_limits:
+    min: 0.13
+    max: 0.4
   max_ammo: 0
   projectile: {fileID: 0}
   swing_time_total: 0.13

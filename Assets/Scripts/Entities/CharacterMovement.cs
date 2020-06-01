@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct FloatRange {
+    public float min;
+    public float max;
+}
+
 public class CharacterMovement : MonoBehaviour
 {
     protected virtual void Awake() {
@@ -16,4 +22,5 @@ public class CharacterMovement : MonoBehaviour
     }
 
     public float move_speed;
+    public FloatRange move_speed_limits;
 }

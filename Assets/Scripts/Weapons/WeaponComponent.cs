@@ -12,6 +12,14 @@ public class WeaponComponent : MonoBehaviour
 
     private WeaponPickup pickupkey_down_item;
 
+    public Weapon GetWeapon() {
+        if (!equiped_weapon) {
+            Debug.LogWarning("TryFireWeapon with no equipped weapon!");
+            return null;
+        }
+        return equiped_weapon.GetComponent<Weapon>();
+    }
+
     public void PickupWeapon(GameObject weapon_gameobject) {
         // @TODO; always drop weapon?
         DropWeapon();
