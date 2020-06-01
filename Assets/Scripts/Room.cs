@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[System.Serializable]
+public struct EnemySpawnWeights {
+    public int weight;
+    public GameObject enemy_prefab;
+}
+
 public struct RoomSetupProperties {
     public RoomRelativeDirection enter_from;
 };
 
 public class Room : MonoBehaviour
 {
-    public List<GameObject> enemy_types = new List<GameObject>();
+    //public List<GameObject> enemy_types = new List<GameObject>();
+    public List<EnemySpawnWeights> enemy_types = new List<EnemySpawnWeights>();
     private List<Objective> active_objectives = new List<Objective>();
     public bool room_setup_complete;
 
+    
     public void SetupRoom(RoomSetupProperties properties)
     {
         var player = PlayerCharacter.GetPlayerCharacter();
@@ -24,10 +32,17 @@ public class Room : MonoBehaviour
         }
         player.transform.position = player_spawn.transform.position;
 
+        if(enemy_types.Count == 0) {
+            Debug.LogError("NEED TO SET ENEMY WEIGHTS IN ROOM!");
+            return;
+        }
+        Dictionary<GameObject, int> enemy_spawn_dict = new Dictionary<GameObject, int>();
+        enemy_types.ForEach((enemy) => { enemy_spawn_dict.Add(enemy.enemy_prefab, enemy.weight); });
+        var enemy_weighted_random = WeightedRandomizer.From(enemy_spawn_dict);
         var enemy_spawn_points = GetComponentsInChildren<EnemySpawn>().ToList();
         enemy_spawn_points.ForEach((EnemySpawn spawn) => {
-            // @TODO: spawn more than one enemy type...
-            var enemy_instance = Instantiate<GameObject>(enemy_types[0], spawn.transform);
+            var enemy_type = enemy_weighted_random.TakeOne();
+            var enemy_instance = Instantiate<GameObject>(enemy_type, spawn.transform);
             // make new spawns objectives in order to exit room
             enemy_instance.AddComponent<ObjectiveEnemy>();
             var ai_brain = enemy_instance.GetComponent<AIBrain>();

@@ -2549,7 +2549,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy_types:
-  - {fileID: 8751948770931624662, guid: 1701f03cce6f1204e8a4bad84c2e4566, type: 3}
+  - weight: 2
+    enemy_prefab: {fileID: 8751948770931624662, guid: 1701f03cce6f1204e8a4bad84c2e4566,
+      type: 3}
+  - weight: 1
+    enemy_prefab: {fileID: 943651805699162987, guid: d23347f5686b1ea45914ec24456f0042,
+      type: 3}
   room_setup_complete: 0
 --- !u!1 &229420595093521992
 GameObject:

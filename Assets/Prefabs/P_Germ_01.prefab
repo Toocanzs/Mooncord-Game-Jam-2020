@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4426963855139216594}
   - component: {fileID: 6853297367851785255}
   - component: {fileID: 2504117765041132005}
-  - component: {fileID: 611961596640388849}
   - component: {fileID: 9052330167060533572}
   - component: {fileID: 6921035370202473635}
   - component: {fileID: 1567003102750146070}
@@ -78,7 +77,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.04}
-  m_Size: {x: 0.52, y: 0.68}
+  m_Size: {x: 0.4, y: 0.53}
   m_Direction: 0
 --- !u!114 &4426963855139216594
 MonoBehaviour:
@@ -119,19 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   can_drop_health: 1
---- !u!114 &611961596640388849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943651805699162987}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64244c37b85c4f847b1e1c9e09c6d297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enable_distance: 8
 --- !u!114 &9052330167060533572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,9 +145,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enable_distance: 8
+  germ_projectile: {fileID: 6654248764997174400, guid: ed3f3ddddd402fc4cbf844de5d102891,
+    type: 3}
   spit_cooldown: 2.5
   minimum_seek_distance: 3.5
-  spit_delay_between_projectiles: 0.45
+  spit_delay_between_projectiles: 0.8
+  projectiles_per_volley:
+    min: 2
+    max: 5
 --- !u!114 &1567003102750146070
 MonoBehaviour:
   m_ObjectHideFlags: 0
