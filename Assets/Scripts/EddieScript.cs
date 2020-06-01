@@ -17,6 +17,7 @@ public class EddieScript : MonoBehaviour
     public Transform laserSpawnPosition;
     public GameObject spikePrefab;
     public Transform spikeSpawnPoint;
+    public GameObject minePrefab;
 
     public Transform pivot;
 
@@ -76,6 +77,10 @@ public class EddieScript : MonoBehaviour
 
     private void OnHealthChange(int difference)
     {
+        if ((float) healthComponent.Health / healthComponent.max_health < 0.5f)
+        {
+            phase = 1;
+        }
         if (healthComponent.Health <= 0)
         {
             //TODO: actually die
@@ -90,7 +95,6 @@ public class EddieScript : MonoBehaviour
                     sr.material.SetColor("_AdditiveColor", Color.black);
                 });
             });
-            Debug.Log("hit");
         }
     }
 
@@ -108,7 +112,7 @@ public class EddieScript : MonoBehaviour
     {
         TurnToFace();
         float angle = Vector2Extentions.GetAngle((PlayerCharacter.GetPostion() - laserSpawnPosition.position).normalized);
-        int numSpikes = 6;
+        int numSpikes = 6 + phase * 2;
         bool direct = Random.Range(0, 2) == 0;
         for (int i = 0; i < numSpikes; i++)
         {
@@ -154,15 +158,16 @@ public class EddieScript : MonoBehaviour
     {
         TurnToFace();
         float angle = Vector2Extentions.GetAngle((PlayerCharacter.GetPostion() - laserSpawnPosition.position).normalized);
-        for (int i = 0; i < numLasers; i++)
+        int lasersToShoot = numLasers + phase * 4;
+        for (int i = 0; i < lasersToShoot; i++)
         {
-            float percent = (float) i / numLasers;
+            float percent = (float) i / lasersToShoot;
             percent = -1f + 2f * percent;
-            float angleOffset = (percent * (numLasers / 6f)) + Random.Range(-0.1f, 0.1f);
-            if (i == numLasers / 2)
+            float angleOffset = (percent * (lasersToShoot / 6f)) + Random.Range(-0.1f, 0.1f);
+            if (i == lasersToShoot / 2)
                 angleOffset = 0;
             quaternion rot = quaternion.Euler(0, 0, angle + angleOffset);
-            float fireWaitTime = ((float) i / numLasers) * (laserFireTime + numLasers * 0.05f);
+            float fireWaitTime = ((float) i / lasersToShoot) * (laserFireTime + lasersToShoot * 0.05f);
 
             StartCoroutine(FireSingleLaser(rot, fireWaitTime));
         }
@@ -241,6 +246,14 @@ public class EddieScript : MonoBehaviour
                     jumpTime = 0;
                     jumping = false;
                     animator.SetTrigger("Jump");
+
+                    if (/*phase > 0 &&*/ Random.Range(0, 2) == 0)//TODO: remove true
+                    {
+                        Vector2 pos = PlayerCharacter.GetPostion();
+                        Vector2 velocity = PlayerCharacter.GetVelocity();
+                        Vector2 target = pos + velocity * Random.Range(0, 0.6f);
+                        StartCoroutine(SpawnMine(target, 0.1f));
+                    }
                 }
 
                 if (jumping)
@@ -309,6 +322,12 @@ public class EddieScript : MonoBehaviour
         var script = go.GetComponent<Spike>();
         script.direct = direct;
         script.lockDistance *= direct ? 1 : 2;
+    }
+    
+    IEnumerator SpawnMine(Vector2 position, float time)
+    {
+        yield return new WaitForSeconds(time);
+        var go = Instantiate(minePrefab, position, Quaternion.identity);
     }
 
     IEnumerator FireTopLasers(Vector3 offset, float time)

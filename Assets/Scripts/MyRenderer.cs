@@ -89,6 +89,7 @@ public class MyRenderer : ScriptableRenderer
                 
                 float goldenRatio = (1f + math.sqrt(5)) / 2f;
                 float randomRayOffset = randomIndex * 2f * math.PI * (goldenRatio - 1f);
+                randomRayOffset %= (2f * math.PI) / manager.RayCount;
                 command.SetComputeFloatParam(computeShader, "RandomRayOffset", randomRayOffset);
                 command.DispatchCompute(computeShader, raycastKernel, (manager.ProbeCounts.x + 63) / 64, manager.ProbeCounts.y, 1);
                 context.ExecuteCommandBuffer(command);

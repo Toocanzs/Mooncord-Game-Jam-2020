@@ -64,7 +64,7 @@ public class Spike : MonoBehaviour
     {
         if (other.collider.TryGetComponent(typeof(PlayerCharacter), out var character))
         {
-            character.GetComponent<HealthComponent>().ChangeHealth(-2);
+            character.GetComponent<HealthComponent>().ChangeHealth(-1);
             Destroy(gameObject);
         }
     }

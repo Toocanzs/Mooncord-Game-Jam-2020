@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightingCamera: {fileID: 6900896340513076258}
   PixelsPerUnit: 32
-  RayCount: 32
+  RayCount: 64
   ProbeCounts:
     x: 50
     y: 30
