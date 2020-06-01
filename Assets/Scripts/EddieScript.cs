@@ -65,6 +65,8 @@ public class EddieScript : MonoBehaviour
     
     private List<SpriteRenderer> sprite_renderers = new List<SpriteRenderer>();
 
+    public AudioClip hitSound;
+
     void Start()
     {
         //ChangeState(State.IDLE);
@@ -85,6 +87,15 @@ public class EddieScript : MonoBehaviour
         {
             //TODO: actually die
             ChangeState(State.DEAD);
+            animator.SetTrigger("Dead");
+            healthComponent.on_health_change -= OnHealthChange;
+            float time = 0;
+            for (int i = 0; i < 15; i++)
+            {
+                StartCoroutine(SpawnMine((Vector2) pivot.position + Random.insideUnitCircle * 5f, time));
+                time += Random.Range(0.02f, 0.05f);
+            }
+            this.enabled = false;
         }
         else
         {
@@ -96,6 +107,8 @@ public class EddieScript : MonoBehaviour
                 });
             });
         }
+        
+        audioSource.PlayOneShot(hitSound);
     }
 
     public void BeginJump()
