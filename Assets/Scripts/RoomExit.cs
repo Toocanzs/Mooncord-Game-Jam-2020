@@ -28,7 +28,7 @@ public class RoomExit : MonoBehaviour
         if (player_character) {
             var current_room = RoomManager.GetActiveRoom();
             if (current_room && current_room.CanExit()) {
-                current_room.ExitRoom();
+                current_room.ExitRoom(this);
             }
         }
     }

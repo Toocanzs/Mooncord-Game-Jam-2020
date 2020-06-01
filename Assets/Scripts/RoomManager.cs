@@ -30,33 +30,50 @@ public class RoomManager : MonoBehaviour
             Debug.LogWarning("Please assign some Rooms to the RoomManager!");
             return;
         }
-        // @TEMP for now, just spawn the first room
-        CreateNextRoom();
     }
 
     public static Room GetActiveRoom() {
         return instance.active_room_instance;
     }
 
-    public static void ExitCurrentRoom() {
+    public static void ExitCurrentRoom(Room exited_room, RoomExit exit) {
         ControlManager.SetInputEnabled(false);
         var game_camera = GameCamera.GetCamera();
         game_camera.StartFade(instance.room_exit_fade_out_time, 1f, () => {
             Destroy(instance.active_room_instance.gameObject);
             instance.current_room_index++;
-            CreateNextRoom();
+            RoomSetupProperties room_setup_properties = new RoomSetupProperties();
+            room_setup_properties.enter_from = exit.exit_direction;
+            CreateNextRoom(room_setup_properties);
         });
     }
 
-    private static void CreateNextRoom() {
+    private static void CreateNextRoom(RoomSetupProperties properties) {
         if(instance.room_prefabs.Count > instance.current_room_index) {
             var room_instance = Instantiate(instance.room_prefabs[instance.current_room_index]);
             var room_component = room_instance.GetComponent<Room>();
+            room_component.SetupRoom(properties);
             instance.active_room_instance = room_component;
+
             var game_camera = GameCamera.GetCamera();
+
+            // move camera to player's new location
+            var camera_follow = game_camera.gameObject.GetComponent<CameraFollow>();
+            var player = PlayerCharacter.GetPlayerCharacter();
+            camera_follow.JumpTo(player.gameObject.transform.position);
+
+            // start fade in
             game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
-                ControlManager.SetInputEnabled(true);
-                room_component.ActivateRoom();
+                // @TEMP: kinda jank but whatcha gonna do...
+                var sequence_manager = instance.gameObject.GetComponent<GameStartupSequence>();
+                if (!sequence_manager) {
+                    Debug.LogError("room manager couldnt find startup sequence manager!");
+                    return;
+                }
+                if (!sequence_manager.IsSequenceActive()) {
+                    ControlManager.SetInputEnabled(true);
+                    room_component.ActivateRoom();
+                }
             });
         }
 

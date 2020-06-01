@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class AIBrain : MonoBehaviour
 {
+    public float enable_distance;
 
     private float seek_time_remain;
     private float paused_seek_time_remain;
     private EnemyMovement enemy_movement;
     private bool brain_enabled;
+    private bool enable_on_distance_or_damage;
 
     private void Awake() {
         enemy_movement = GetComponent<EnemyMovement>();
@@ -23,6 +25,15 @@ public class AIBrain : MonoBehaviour
             seek_time_remain = 0;
         }
     }
+
+    public bool IsEnabledOnDistance() {
+        return enable_on_distance_or_damage;
+    }
+
+    public void SetEnableOnDistanceOrDamage() {
+        enable_on_distance_or_damage = true;
+    }
+
     public bool IsBrainEnabled() {
         return brain_enabled;
     }
@@ -32,10 +43,23 @@ public class AIBrain : MonoBehaviour
         paused_seek_time_remain = UnityEngine.Random.Range(1f, 5f);
     }
 
+    private float GetDistanceToPlayer() {
+        var player = PlayerCharacter.GetPlayerCharacter();
+        return Vector3.Distance(player.gameObject.transform.position, transform.position);
+    }
 
     private void Update() {
-        if (!brain_enabled)
+
+        if (!brain_enabled) {
+            var health_component = GetComponent<HealthComponent>();
+            if(enable_on_distance_or_damage && !health_component.isDead()) {
+                var player_distance = GetDistanceToPlayer();
+                if(player_distance <= enable_distance) {
+                    brain_enabled = true;
+                }
+            }
             return;
+        }
         if (seek_time_remain > 0f) {
             var seek_direction = PathfindingManager.Instance.GetDirectionToPlayer(transform.position);
             enemy_movement.MoveDirection(seek_direction);

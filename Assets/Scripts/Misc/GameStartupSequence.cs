@@ -9,11 +9,23 @@ public class GameStartupSequence : MonoBehaviour
     public List<GameObject> sequence_items = new List<GameObject>();
     private int sequence_index;
     private GameObject active_sequence_item;
+    private bool sequence_active;
+    private void Awake() {
+        sequence_active = true;
+    }
+
+    public bool IsSequenceActive() {
+        return sequence_active;
+    }
 
     public void StartGameIntroSequence() {
         ControlManager.SetInputEnabled(false);
         var game_camera = GameCamera.GetCamera();
         game_camera.StartFade(0f, 1f);
+        var follow_component = game_camera.gameObject.GetComponent<CameraFollow>();
+        var player = PlayerCharacter.GetPlayerCharacter();
+        follow_component.JumpTo(player.gameObject.transform.position);
+        follow_component.SetTarget(player.gameObject.transform);
         NextSequenceItem();
     }
 
@@ -27,6 +39,7 @@ public class GameStartupSequence : MonoBehaviour
             sequence_event.StartEvent(NextSequenceItem);
             sequence_index++;
         } else {
+            sequence_active = false;
             EndGameIntroSequence();
         }
     }
