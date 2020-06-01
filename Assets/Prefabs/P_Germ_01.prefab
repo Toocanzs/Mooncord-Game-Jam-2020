@@ -131,6 +131,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_speed: 4
+  move_speed_limits:
+    min: 0
+    max: 0
   push_dampening: 0.92
 --- !u!114 &6921035370202473635
 MonoBehaviour:
@@ -200,8 +203,11 @@ MonoBehaviour:
   - weight: 4
     prefab: {fileID: 7574484345599373830, guid: 12016b744bd11ff438a193d61f7302f5,
       type: 3}
-  - weight: 1
+  - weight: 2
     prefab: {fileID: 7574484345599373830, guid: b7775ff7aafba824488d1bc05993ce3b,
+      type: 3}
+  - weight: 1
+    prefab: {fileID: 7574484345599373830, guid: 3ebeaaa3fc2ed4d418a7765a95449511,
       type: 3}
   item_drop_weights: []
 --- !u!1 &4095085513440402103
