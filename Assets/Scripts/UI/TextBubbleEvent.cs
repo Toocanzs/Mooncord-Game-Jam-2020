@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using UnityEngine;
 
 public class TextBubbleEvent : MonoBehaviour, ISequenceEvent
@@ -11,6 +12,7 @@ public class TextBubbleEvent : MonoBehaviour, ISequenceEvent
     public Vector3 attach_location;
     public SpriteRenderer hint_sprite_renderer;
 
+    private Sequence seq;
     public void StartEvent(Action complete_callback) {
         var bubble_component = GetComponentInChildren<TextBubble>();
         if (attach_to_character) {
@@ -27,14 +29,19 @@ public class TextBubbleEvent : MonoBehaviour, ISequenceEvent
         text_element.OnComplete += (inst, args) => { complete_callback?.Invoke(); };
 
         if(hint_sprite_renderer != null) {
-            var seq = DOTween.Sequence();
+            seq = DOTween.Sequence();
             seq.SetDelay(2.0f);
             seq.Append(hint_sprite_renderer.DOColor(new Color(1f, 1f, 1f, 1f), 0.4f));
-            seq.OnComplete(() => seq = null);
+            seq.OnKill(() => seq = null);
         }
     }
 
     private void OnDestroy() {
-        DOTween.Kill(this);
+        if (hint_sprite_renderer) {
+            DOTween.Kill(hint_sprite_renderer);
+        }
+        if (seq != null) {
+            seq.Kill();
+        }
     }
 }
