@@ -76,7 +76,9 @@ public class LightingManager : MonoBehaviour
 
     public void SetCenterRounded(float3 pos)
     {
-        transform.position = math.floor(pos) + 0.5f;
+        var newPos = math.floor(pos) + 0.5f;
+        newPos.z = -10;
+        transform.position = newPos;
     }
 
     public bool UpdateCameraPos()
