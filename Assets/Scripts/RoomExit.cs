@@ -11,12 +11,16 @@ public class RoomExit : MonoBehaviour
     
     public RoomRelativeDirection exit_direction;
 
+    bool is_destroying;
     private void Awake() {
         var sprite_render = GetComponent<SpriteRenderer>();
         sprite_render.sprite = closed_sprite;
     }
 
     public void SetExitable() {
+        if (is_destroying) {
+            return;
+        }
         var exit_trigger = GetComponent<Collider2D>();
         if (exit_trigger == null) {
             Debug.LogWarning("Cannot SetExitable on RoomExit, no exit collision found!");
@@ -38,5 +42,8 @@ public class RoomExit : MonoBehaviour
                 current_room.ExitRoom(this);
             }
         }
+    }
+    public void OnDestroy() {
+        is_destroying = true;
     }
 }
