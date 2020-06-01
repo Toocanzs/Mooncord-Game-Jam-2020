@@ -37,7 +37,8 @@ public class CharacterAnimator : MonoBehaviour
         sprite_renderers.ForEach((sr) => {
             DOTween.Kill(sr.material);
         });
-        health_component.on_health_change -= OnHealthChange;
+        if(health_component != null)
+            health_component.on_health_change -= OnHealthChange;
     }
 
     void Update()

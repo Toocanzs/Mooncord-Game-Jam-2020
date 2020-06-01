@@ -40,7 +40,8 @@ public class AIBrain : MonoBehaviour
 
     private void OnDestroy()
     {
-        health_component.on_health_change -= OnHealth;
+        if(health_component != null)
+            health_component.on_health_change -= OnHealth;
     }
 
     public void OnHealth(int difference) {
