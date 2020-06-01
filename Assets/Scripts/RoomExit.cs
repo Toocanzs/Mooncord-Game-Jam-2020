@@ -7,6 +7,7 @@ public class RoomExit : MonoBehaviour
 
     public Sprite closed_sprite;
     public Sprite open_sprite;
+    public GameObject indicator_object;
     
     public RoomRelativeDirection exit_direction;
 
@@ -23,8 +24,7 @@ public class RoomExit : MonoBehaviour
         }
         var sprite_render = GetComponent<SpriteRenderer>();
         sprite_render.sprite = open_sprite;
-        var indicator_trans = transform.Find("indicator_arrow");
-        indicator_trans.gameObject.SetActive(true);
+        indicator_object.SetActive(true);
         exit_trigger.enabled = true;
     }
 

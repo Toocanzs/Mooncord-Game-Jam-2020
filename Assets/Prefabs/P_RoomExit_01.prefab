@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closed_sprite: {fileID: 0}
   open_sprite: {fileID: 21300000, guid: 05eca5bfa08e77748a674a52bbe9718b, type: 3}
+  indicator_object: {fileID: 7233506075913389465}
   exit_direction: 0
 --- !u!1 &7233506075913389465
 GameObject:
