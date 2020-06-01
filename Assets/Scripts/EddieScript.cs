@@ -247,7 +247,7 @@ public class EddieScript : MonoBehaviour
                     jumping = false;
                     animator.SetTrigger("Jump");
 
-                    if (/*phase > 0 &&*/ Random.Range(0, 2) == 0)//TODO: remove true
+                    if (phase > 0 && Random.Range(0, 2) == 0)
                     {
                         Vector2 pos = PlayerCharacter.GetPostion();
                         Vector2 velocity = PlayerCharacter.GetVelocity();
