@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyCharacter : Character
@@ -24,6 +25,8 @@ public class EnemyCharacter : Character
 
     protected override void OnDeath() {
         base.OnDeath();
+        var colliders = GetComponentsInChildren<Collider2D>().ToList();
+        colliders.ForEach(x => x.enabled = false);
         update_disabled = true;
         var brain = GetComponent<AIBrain>();
         if (!brain) {

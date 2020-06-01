@@ -15,8 +15,11 @@ public class HealthPickup : Pickupable, IPikcupable
 
     public void OnCharacter(GameObject character_gameobject) {
         var player_health_component = character_gameobject.GetComponent<HealthComponent>();
-        player_health_component.ChangeHealth(health_amount);
-        DoPickup();
+        // dont pickup if dead! ;O
+        if (!player_health_component.isDead()) {
+            player_health_component.ChangeHealth(health_amount);
+            DoPickup();
+        }
     }
 
     public void OnCharacterExit(GameObject character_gameobject) {
