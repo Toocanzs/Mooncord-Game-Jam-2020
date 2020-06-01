@@ -5,7 +5,15 @@ using UnityEngine;
 public class RoomExit : MonoBehaviour
 {
 
+    public Sprite closed_sprite;
+    public Sprite open_sprite;
+    
     public RoomRelativeDirection exit_direction;
+
+    private void Awake() {
+        var sprite_render = GetComponent<SpriteRenderer>();
+        sprite_render.sprite = closed_sprite;
+    }
 
     public void SetExitable() {
         var exit_trigger = GetComponent<Collider2D>();
@@ -13,13 +21,17 @@ public class RoomExit : MonoBehaviour
             Debug.LogWarning("Cannot SetExitable on RoomExit, no exit collision found!");
             return;
         }
-        var animator = GetComponent<Animator>();
-        if (!animator) {
-            Debug.LogWarning("Missing animator component on RoomExit!");
-            return;
-        } else {
-            animator.SetTrigger("open");
-        }
+        var sprite_render = GetComponent<SpriteRenderer>();
+        sprite_render.sprite = open_sprite;
+        var indicator_trans = transform.Find("indicator_arrow");
+        indicator_trans.gameObject.SetActive(true);
+        //var animator = GetComponent<Animator>();
+        //if (!animator) {
+        //    Debug.LogWarning("Missing animator component on RoomExit!");
+        //    return;
+        //} else {
+        //    animator.SetTrigger("open");
+        //}
         exit_trigger.enabled = true;
     }
 

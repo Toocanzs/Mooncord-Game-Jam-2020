@@ -272,7 +272,7 @@ PrefabInstance:
         type: 3}
       propertyPath: temp_starting_weapon
       value: 
-      objectReference: {fileID: 5023467317358781070, guid: 112212ebf7f54eb479df3845de868afb,
+      objectReference: {fileID: 5657985769381144072, guid: c782957529f4486489bb389e96507a71,
         type: 3}
     - target: {fileID: 7775627571758972049, guid: 6e0346d1c6f49754e9ec7b56d78482b2,
         type: 3}
