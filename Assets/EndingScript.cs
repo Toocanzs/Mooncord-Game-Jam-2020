@@ -23,7 +23,7 @@ public class EndingScript : MonoBehaviour
         {
             image.color = new Color(image.color.r, image.color.g, image.color.b, v);
         }
-        fade.color = new Color(0,0,0, Mathf.Clamp01(2-time));
+        fade.color = new Color(0,0,0, Mathf.Clamp01(1.3f-time/4));
 
         time += Time.deltaTime;
     }
