@@ -10,6 +10,7 @@ public class RoomManager : MonoBehaviour
     public float room_exit_fade_out_time;
     public float room_enter_fade_in_time;
     public List<GameObject> room_prefabs = new List<GameObject>();
+    public GameObject boss_room_prefab;
     private Room active_room_instance;
     private int current_room_index;
     private static RoomManager instance;
@@ -71,11 +72,22 @@ public class RoomManager : MonoBehaviour
             if (!sequence_manager.IsSequenceActive()) {
                 // start fade in
                 game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
-                    // @TEMP: kinda jank but whatcha gonna do...
+                    // @ kinda jank but whatcha gonna do...
                     ControlManager.SetInputEnabled(true);
                     room_component.ActivateRoom();
                 });
             }
+        } else {
+            // @BOSS ROOM...
+            if (!instance.boss_room_prefab) {
+                Debug.LogWarning("No boss room prefab set!");
+                return;
+            }
+            var boss_room = Instantiate<GameObject>(instance.boss_room_prefab);
+            var game_camera = GameCamera.GetCamera();
+            // @Change first param to whatever fade-in-time you want
+            game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
+            });
         }
 
     }
