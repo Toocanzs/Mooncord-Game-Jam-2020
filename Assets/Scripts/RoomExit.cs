@@ -25,13 +25,6 @@ public class RoomExit : MonoBehaviour
         sprite_render.sprite = open_sprite;
         var indicator_trans = transform.Find("indicator_arrow");
         indicator_trans.gameObject.SetActive(true);
-        //var animator = GetComponent<Animator>();
-        //if (!animator) {
-        //    Debug.LogWarning("Missing animator component on RoomExit!");
-        //    return;
-        //} else {
-        //    animator.SetTrigger("open");
-        //}
         exit_trigger.enabled = true;
     }
 

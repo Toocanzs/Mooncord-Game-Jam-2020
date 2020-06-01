@@ -8,12 +8,12 @@ public class AIBrain : MonoBehaviour
 {
     public float enable_distance;
 
-    private float seek_time_remain;
-    private float paused_seek_time_remain;
-    private EnemyMovement enemy_movement;
-    private bool brain_enabled;
-    private bool enable_on_distance_or_damage;
-    private HealthComponent health_component;
+    protected float seek_time_remain;
+    protected float paused_seek_time_remain;
+    protected EnemyMovement enemy_movement;
+    protected bool brain_enabled;
+    protected bool enable_on_distance_or_damage;
+    protected HealthComponent health_component;
 
     private void Awake() {
         enemy_movement = GetComponent<EnemyMovement>();
@@ -54,17 +54,17 @@ public class AIBrain : MonoBehaviour
         return brain_enabled;
     }
 
-    private void SetSeekTime() {
+    protected virtual void SetSeekTime() {
         seek_time_remain = UnityEngine.Random.Range(2f, 5f);
         paused_seek_time_remain = UnityEngine.Random.Range(1f, 5f);
     }
 
-    private float GetDistanceToPlayer() {
+    protected float GetDistanceToPlayer() {
         var player = PlayerCharacter.GetPlayerCharacter();
         return Vector3.Distance(player.gameObject.transform.position, transform.position);
     }
 
-    private void Update() {
+    virtual protected void Update() {
 
         if (!brain_enabled) {
             var health_component = GetComponent<HealthComponent>();
