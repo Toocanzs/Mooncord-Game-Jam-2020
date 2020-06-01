@@ -27,6 +27,7 @@ public class CharacterAnimator : MonoBehaviour
         }
         sprite_renderers.ForEach((sr) => {
             DOTween.Kill(sr.material);
+            sr.material.color = Color.black;
             sr.material.DOColor(Color.white, "_AdditiveColor", 0.4f).SetEase(Ease.Flash,8,1).OnComplete(() => {
                 sr.material.SetColor("_AdditiveColor", Color.black);
             });
