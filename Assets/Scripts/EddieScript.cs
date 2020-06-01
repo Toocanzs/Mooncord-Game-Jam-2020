@@ -96,6 +96,7 @@ public class EddieScript : MonoBehaviour
                 time += Random.Range(0.02f, 0.05f);
             }
             this.enabled = false;
+            StartCoroutine(Die(1.5f));
         }
         else
         {
@@ -109,6 +110,12 @@ public class EddieScript : MonoBehaviour
         }
         
         audioSource.PlayOneShot(hitSound);
+    }
+    
+    IEnumerator Die(float time)
+    {
+        yield return new WaitForSeconds(time);
+        transform.DOScale(Vector3.zero, 0.5f);
     }
 
     public void BeginJump()
