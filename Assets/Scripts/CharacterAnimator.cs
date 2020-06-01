@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -13,6 +14,28 @@ public class CharacterAnimator : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         character_rb = GetComponent<Rigidbody2D>();
         sprite_renderers = GetComponentsInChildren<SpriteRenderer>().ToList();
+        var health_component = GetComponent<HealthComponent>();
+        if (health_component) {
+            health_component.on_health_change += OnHealthChange;
+        }
+    }
+
+    private void OnHealthChange(int change) {
+        if(change == 0.0f) {
+            return;
+        }
+        sprite_renderers.ForEach((sr) => {
+            DOTween.Kill(sr.material);
+            sr.material.DOColor(Color.white, "_AdditiveColor", 0.4f).SetEase(Ease.Flash,8,1).OnComplete(() => {
+                sr.material.SetColor("_AdditiveColor", Color.black);
+            });
+        });
+    }
+
+    private void OnDestroy() {
+        sprite_renderers.ForEach((sr) => {
+            DOTween.Kill(sr.material);
+        });
     }
 
     void Update()

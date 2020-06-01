@@ -26,6 +26,8 @@ public class RoomExit : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision) {
         var player_character = collision.gameObject.GetComponent<PlayerCharacter>();
         if (player_character) {
+            var movement = player_character.GetComponent<CharacterMovement>();
+            movement.StopMovement();
             var current_room = RoomManager.GetActiveRoom();
             if (current_room && current_room.CanExit()) {
                 current_room.ExitRoom(this);
