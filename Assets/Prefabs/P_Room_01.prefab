@@ -5979,6 +5979,24 @@ Tilemap:
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
+  - first: {x: -1, y: 9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: 0, y: 9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 5
+      m_TileSpriteIndex: 5
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 447
@@ -5991,6 +6009,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ded01ae972f5ea440959b5405f39a867, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: 547ef789fb9eb984088ec9e35c6d5e72, type: 2}
+  - m_RefCount: 2
+    m_Data: {fileID: 11400000, guid: 2217899e82f3414478d8e2392b2d804f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 447
     m_Data: {fileID: 5981248166487617132, guid: 88b79bd7925859e4c9fb23200fc8441e,
@@ -6007,8 +6027,11 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: 4797381957027529952, guid: 88b79bd7925859e4c9fb23200fc8441e,
       type: 3}
+  - m_RefCount: 2
+    m_Data: {fileID: -4820110924849699603, guid: 88b79bd7925859e4c9fb23200fc8441e,
+      type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 456
+  - m_RefCount: 458
     m_Data:
       e00: 1
       e01: 0
@@ -6027,13 +6050,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 456
+  - m_RefCount: 458
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -11, y: -21, z: 0}
-  m_Size: {x: 26, y: 30, z: 1}
+  m_Size: {x: 26, y: 31, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -7183,6 +7206,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_RoomExit_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 945979720522215280, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537539523123637385, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980974560943478649, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7319307725066741024, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
         type: 3}
