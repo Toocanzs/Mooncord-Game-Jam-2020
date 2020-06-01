@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct ItemPickupHints {
+
+}
 public class GameState : MonoBehaviour
 {
     public bool debug_disable;
@@ -26,9 +29,4 @@ public class GameState : MonoBehaviour
         startup_sequence.StartGameIntroSequence();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -63,6 +63,9 @@ MonoBehaviour:
   room_enter_fade_in_time: 1.5
   room_prefabs:
   - {fileID: 7339694114093653260, guid: 0a68e64e4ec00f3469263fe405489dec, type: 3}
+  - {fileID: 4840269108852775417, guid: 6405455e2c754b747b4781e461ad3991, type: 3}
+  - {fileID: 229420594621890841, guid: b71c09e62f80f464d8179ea85183c601, type: 3}
+  - {fileID: 2530388614564171507, guid: 6408f9d033fc7a346b08ca117a9e0220, type: 3}
 --- !u!114 &7466147677674905585
 MonoBehaviour:
   m_ObjectHideFlags: 0
