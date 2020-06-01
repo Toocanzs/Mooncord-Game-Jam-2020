@@ -40,6 +40,8 @@ public abstract class WeaponProjectile : MonoBehaviour
     }
 
     public virtual void SetProperties(WeaponProjectileProperties properties) {
+        var projectile_rotation = Mathf.Rad2Deg * Mathf.Atan2(properties.direction.y, properties.direction.x);
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, projectile_rotation));
         rigid_body.velocity = properties.direction * speed_initial;
         team = properties.team;
     }
