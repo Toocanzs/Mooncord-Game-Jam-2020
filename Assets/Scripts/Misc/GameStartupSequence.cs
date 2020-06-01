@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameStartupSequence : MonoBehaviour
@@ -68,6 +69,12 @@ public class GameStartupSequence : MonoBehaviour
             var active_room = RoomManager.GetActiveRoom();
             active_room.ActivateRoom();
             seq = null;
+            var hints = FindObjectsOfType<HintUIElement>().ToList();
+            hints.ForEach((hint) => {
+                if (hint.hint_type == HintType.SPRINT) {
+                    hint.Show(1.2f);
+                }
+            });
         });
 
     }
