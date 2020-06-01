@@ -12,6 +12,6 @@ public class RestartGame : MonoBehaviour
 
     public void Restart() {
         DOTween.Clear();
-        SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
     }
 }

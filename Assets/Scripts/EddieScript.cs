@@ -5,6 +5,7 @@ using System.Linq;
 using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class EddieScript : MonoBehaviour
@@ -67,6 +68,8 @@ public class EddieScript : MonoBehaviour
 
     public AudioClip hitSound;
 
+    public string EndSceneName = "Ending scene";
+
     void Start()
     {
         //ChangeState(State.IDLE);
@@ -116,8 +119,10 @@ public class EddieScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         transform.DOScale(Vector3.zero, 0.5f);
-        GameCamera.GetCamera().StartFade(3.5f, 1f, () => {
-            throw new Exception("TODO: Add end scene here");
+        GameCamera.GetCamera().EnableFade();
+        GameCamera.GetCamera().StartFade(3.5f, 1f, () =>
+        {
+            SceneManager.LoadScene(EndSceneName, LoadSceneMode.Single);
         });
     }
 

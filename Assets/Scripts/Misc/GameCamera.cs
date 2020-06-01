@@ -50,4 +50,10 @@ public class GameCamera : MonoBehaviour {
         return instance;
     }
 
+    public void EnableFade()
+    {
+        if(fade_sprite_renderer != null)
+            fade_sprite_renderer.enabled = true;
+    }
+
 }
