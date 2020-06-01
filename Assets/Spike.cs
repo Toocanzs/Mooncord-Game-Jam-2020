@@ -22,6 +22,7 @@ public class Spike : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        Destroy(gameObject, 8f);
     }
 
     void Update()
@@ -35,16 +36,15 @@ public class Spike : MonoBehaviour
                 target = target + PlayerCharacter.GetVelocity() * leadTime;
             }
         }
+        else
+        {
+            target = transform.position + transform.right;
+        }
         
         if (Vector2.Distance(target, transform.position) < lockDistance)
         {
             locked = true;
             lineRenderer.enabled = false;
-        }
-
-        if (locked && Vector2.Distance(target, transform.position) < 0.2)
-        {
-            Destroy(gameObject);
         }
 
         lineRenderer.SetPosition(1, target);

@@ -28,5 +28,5 @@ Material:
     - _IsALight: 1
     m_Colors:
     - _AdditiveColor: {r: 0, g: 0.03982159, b: 0.05660379, a: 1}
-    - _Emission: {r: 0, g: 16.313726, b: 23.968628, a: 1}
+    - _Emission: {r: 0, g: 2.0392158, b: 2.9960785, a: 1}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}

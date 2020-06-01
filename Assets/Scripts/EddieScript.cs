@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,6 +15,8 @@ public class EddieScript : MonoBehaviour
 
     public GameObject laserPrefab;
     public Transform laserSpawnPosition;
+    public GameObject spikePrefab;
+    public Transform spikeSpawnPoint;
 
     public Transform pivot;
 
@@ -24,7 +28,8 @@ public class EddieScript : MonoBehaviour
         IDLE,
         Jumping,
         FIRING_LASER,
-        TARGETING
+        FIRING_SPIKES,
+        DEAD,
     }
 
     private State currentState = State.IDLE;
@@ -55,11 +60,38 @@ public class EddieScript : MonoBehaviour
 
     public Transform outOfBoundsLaserSpawn;
 
+    private HealthComponent healthComponent;
+    
+    private List<SpriteRenderer> sprite_renderers = new List<SpriteRenderer>();
+
     void Start()
     {
         //ChangeState(State.IDLE);
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        healthComponent = GetComponent<HealthComponent>();
+        healthComponent.on_health_change += OnHealthChange;
+        sprite_renderers = GetComponentsInChildren<SpriteRenderer>().ToList();
+    }
+
+    private void OnHealthChange(int difference)
+    {
+        if (healthComponent.Health <= 0)
+        {
+            //TODO: actually die
+            ChangeState(State.DEAD);
+        }
+        else
+        {
+            sprite_renderers.ForEach((sr) => {
+                DOTween.Kill(sr.material);
+                sr.material.color = Color.black;
+                sr.material.DOColor(Color.white, "_AdditiveColor", 0.4f).SetEase(Ease.Flash,8,1).OnComplete(() => {
+                    sr.material.SetColor("_AdditiveColor", Color.black);
+                });
+            });
+            Debug.Log("hit");
+        }
     }
 
     public void BeginJump()
@@ -72,13 +104,39 @@ public class EddieScript : MonoBehaviour
         jumpBegin = transform.position;
     }
 
+    public void BeginShootSpikes()
+    {
+        TurnToFace();
+        float angle = Vector2Extentions.GetAngle((PlayerCharacter.GetPostion() - laserSpawnPosition.position).normalized);
+        int numSpikes = 6;
+        bool direct = Random.Range(0, 2) == 0;
+        for (int i = 0; i < numSpikes; i++)
+        {
+            float percent = (float) i / numSpikes;
+            percent = -1f + 2f * percent;
+            float angleOffset = (percent * (numSpikes / 6f)) + Random.Range(-0.1f, 0.1f);
+            if (i == numSpikes / 2)
+                angleOffset = 0;
+            quaternion rot = quaternion.Euler(0, 0, angle + angleOffset);
+            float fireWaitTime = ((float) i / numSpikes) * (laserFireTime + numSpikes * 0.05f);
+
+            StartCoroutine(FireSingleSpike(rot, fireWaitTime, direct));
+        }
+    }
+
+    public void EndShootSpikes()
+    {
+        animator.ResetTrigger("Jump");
+        ChangeState(State.IDLE, 0.1f);
+    }
+
     private void OnDrawGizmosSelected()
     {
         Vector3 pos = transform.position;
         pos.y = heightBarrier;
-        
+
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(pos, new Vector3(150,0.1f,1));
+        Gizmos.DrawCube(pos, new Vector3(150, 0.1f, 1));
     }
 
     public void EndJump()
@@ -108,18 +166,17 @@ public class EddieScript : MonoBehaviour
 
             StartCoroutine(FireSingleLaser(rot, fireWaitTime));
         }
-        
+
         var pos = PlayerCharacter.GetPostion();
         if (pos.y > heightBarrier)
         {
             for (int i = 0; i < 5; i++)
             {
-                StartCoroutine(FireTopLasers(new Vector3(0,-i, 0), i * 0.15f));
+                StartCoroutine(FireTopLasers(new Vector3(0, -i, 0), i * 0.15f));
             }
-            
         }
     }
-    
+
     public void LandSound()
     {
         audioSource.PlayOneShot(landingSound, 0.3f);
@@ -133,12 +190,8 @@ public class EddieScript : MonoBehaviour
 
     void RandomFromIdle()
     {
-        int numberOfMoves = 2;
-        float rand = Mathf.FloorToInt(Random.Range(0f, 1f) + 0.5f);
-        //Bias away from jumping if we're close
-        float offset = Mathf.Clamp01(3f / Vector2.Distance(PlayerCharacter.GetPostion(), pivot.position)) * 0.7f;
-        rand += offset;
-        int value = Mathf.RoundToInt(Mathf.Clamp(rand, 0, numberOfMoves - 1));
+        int numberOfMoves = 3;
+        int value = Random.Range(0, numberOfMoves);
         switch (value)
         {
             case 0:
@@ -146,6 +199,9 @@ public class EddieScript : MonoBehaviour
                 break;
             case 1:
                 ChangeState(State.FIRING_LASER, 3);
+                break;
+            case 2:
+                ChangeState(State.FIRING_SPIKES, 3);
                 break;
             default:
                 Debug.LogError($"Unhandled random change from idle {value}");
@@ -166,7 +222,7 @@ public class EddieScript : MonoBehaviour
 
                 if (stateTime > stateTransitionTime)
                 {
-                    if (Vector3.Distance(PlayerCharacter.GetPostion(), transform.position) > 10)
+                    if (Vector3.Distance(PlayerCharacter.GetPostion(), transform.position) > 12)
                     {
                         ChangeState(State.Jumping);
                     }
@@ -204,9 +260,17 @@ public class EddieScript : MonoBehaviour
                 }
             }
                 break;
-            case State.TARGETING:
+            case State.FIRING_SPIKES:
             {
-                ChangeState(State.IDLE, laserFireTime + numLasers * 0.05f + Random.Range(0.5f, 1f));
+                if (previousState != currentState)
+                {
+                    previousState = currentState;
+                    animator.SetTrigger("Spike");
+                }
+            }
+                break;
+            case State.DEAD:
+            {
             }
                 break;
             default:
@@ -237,7 +301,16 @@ public class EddieScript : MonoBehaviour
         var go = Instantiate(laserPrefab, laserSpawnPosition.position, Quaternion.identity, laserSpawnPosition);
         go.GetComponent<LaserScript>().initialDirection = math.mul(dir, Vector3.right).xy;
     }
-    
+
+    IEnumerator FireSingleSpike(quaternion dir, float time, bool direct)
+    {
+        yield return new WaitForSeconds(time);
+        var go = Instantiate(spikePrefab, spikeSpawnPoint.position, dir);
+        var script = go.GetComponent<Spike>();
+        script.direct = direct;
+        script.lockDistance *= direct ? 1 : 2;
+    }
+
     IEnumerator FireTopLasers(Vector3 offset, float time)
     {
         yield return new WaitForSeconds(time);
