@@ -269,6 +269,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5023467317358781070, guid: 112212ebf7f54eb479df3845de868afb,
         type: 3}
+    - target: {fileID: 2912802669018854017, guid: 6e0346d1c6f49754e9ec7b56d78482b2,
+        type: 3}
+      propertyPath: max_health
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7775627571758972049, guid: 6e0346d1c6f49754e9ec7b56d78482b2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -546,6 +551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: debug_disable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7466147677674905596, guid: 080282fe698a85340b920ccb7540956f,
+        type: 3}
+      propertyPath: bossRoomSceneName
+      value: SampleScene
       objectReference: {fileID: 0}
     - target: {fileID: 7466147677674905597, guid: 080282fe698a85340b920ccb7540956f,
         type: 3}

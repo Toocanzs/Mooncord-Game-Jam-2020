@@ -950,7 +950,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7be9a139d079c6943a6d88dd7fe67c11, type: 2}
+  - {fileID: 2100000, guid: 6cde80fde5172514f97171df4940b848, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3915,7 +3915,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7be9a139d079c6943a6d88dd7fe67c11, type: 2}
+  - {fileID: 2100000, guid: 6cde80fde5172514f97171df4940b848, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4085,6 +4085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy_types:
   - {fileID: 8751948770931624662, guid: 1701f03cce6f1204e8a4bad84c2e4566, type: 3}
+  room_setup_complete: 0
 --- !u!1839735485 &3605350269579167427
 Tilemap:
   m_ObjectHideFlags: 0
