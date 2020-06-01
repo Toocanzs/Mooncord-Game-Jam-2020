@@ -24,6 +24,11 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        instance = null;
+    }
+
     void Start()
     {
         if (debug_disable) {
@@ -85,8 +90,9 @@ public class RoomManager : MonoBehaviour
                 Debug.LogWarning("No boss room prefab set!");
                 return;
             }
-
-            SceneManager.LoadScene(instance.bossRoomSceneName, LoadSceneMode.Additive);
+            
+            DOTween.Clear();
+            SceneManager.LoadScene(instance.bossRoomSceneName, LoadSceneMode.Single);
             var game_camera = GameCamera.GetCamera();
             // @Change first param to whatever fade-in-time you want
             game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {

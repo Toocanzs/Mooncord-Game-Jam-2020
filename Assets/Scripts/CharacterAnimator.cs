@@ -9,12 +9,13 @@ public class CharacterAnimator : MonoBehaviour
     private Rigidbody2D character_rb;
     private Animator animator;
     private List<SpriteRenderer> sprite_renderers = new List<SpriteRenderer>();
+    private HealthComponent health_component;
 
     private void Awake() {
         animator = GetComponentInChildren<Animator>();
         character_rb = GetComponent<Rigidbody2D>();
         sprite_renderers = GetComponentsInChildren<SpriteRenderer>().ToList();
-        var health_component = GetComponent<HealthComponent>();
+        health_component = GetComponent<HealthComponent>();
         if (health_component) {
             health_component.on_health_change += OnHealthChange;
         }
@@ -36,6 +37,7 @@ public class CharacterAnimator : MonoBehaviour
         sprite_renderers.ForEach((sr) => {
             DOTween.Kill(sr.material);
         });
+        health_component.on_health_change -= OnHealthChange;
     }
 
     void Update()

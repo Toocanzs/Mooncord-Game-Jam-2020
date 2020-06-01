@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class AIBrain : MonoBehaviour
     private EnemyMovement enemy_movement;
     private bool brain_enabled;
     private bool enable_on_distance_or_damage;
+    private HealthComponent health_component;
 
     private void Awake() {
         enemy_movement = GetComponent<EnemyMovement>();
@@ -32,8 +34,13 @@ public class AIBrain : MonoBehaviour
 
     public void SetEnableOnDistanceOrDamage() {
         enable_on_distance_or_damage = true;
-        var health_component = GetComponent<HealthComponent>();
+        health_component = GetComponent<HealthComponent>();
         health_component.on_health_change += OnHealth;
+    }
+
+    private void OnDestroy()
+    {
+        health_component.on_health_change -= OnHealth;
     }
 
     public void OnHealth(int difference) {

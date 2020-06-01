@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &185114363
 Transform:
   m_ObjectHideFlags: 0
@@ -398,7 +398,7 @@ PrefabInstance:
     - target: {fileID: 7775627571758972053, guid: 6e0346d1c6f49754e9ec7b56d78482b2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e0346d1c6f49754e9ec7b56d78482b2, type: 3}
@@ -433,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 7466147677674905597, guid: 080282fe698a85340b920ccb7540956f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7466147677674905598, guid: 080282fe698a85340b920ccb7540956f,
         type: 3}
@@ -11125,7 +11125,7 @@ PrefabInstance:
     - target: {fileID: 3215477698988629818, guid: 1d255495df1108a49937a18f7e15c96c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3215477698988629822, guid: 1d255495df1108a49937a18f7e15c96c,
         type: 3}
@@ -11232,6 +11232,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3215477698988629823, guid: 1d255495df1108a49937a18f7e15c96c,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 185114366}
     - target: {fileID: 5561337311062558627, guid: 1d255495df1108a49937a18f7e15c96c,
         type: 3}
       propertyPath: m_Alpha
@@ -37569,7 +37574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2001112227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38148,7 +38153,7 @@ PrefabInstance:
     - target: {fileID: 6900896340513076270, guid: 9688b13ea01125048952492e083350b9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9688b13ea01125048952492e083350b9, type: 3}

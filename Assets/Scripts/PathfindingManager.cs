@@ -149,6 +149,7 @@ public class PathfindingManager : MonoBehaviour
         probeData.Dispose();
         directionData.Dispose();
         lightingManager.OnLightingProbesMoved -= HandleProbesMoved;
+        Instance = null;
     }
 
     void Update()

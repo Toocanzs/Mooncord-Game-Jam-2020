@@ -65,6 +65,7 @@ public class LightingManager : MonoBehaviour
         LightingPerProbeBuffer.Release();
         LightingPerPixelBuffer.Release();
         WallBuffer.Release();
+        Instance = null;
     }
 
 

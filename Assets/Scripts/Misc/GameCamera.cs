@@ -25,10 +25,18 @@ public class GameCamera : MonoBehaviour {
         }
     }
 
+    private void OnDestroy()
+    {
+        instance = null;
+    }
+
     public void StartFade(float time, float alpha,  Action callback = null) {
         fade_sprite_renderer.enabled = true;
         Color target_color = new Color(0f, 0f, 0f, alpha);
-        DOTween.To(() => fade_sprite_renderer.color, x =>  fade_sprite_renderer.color = x, target_color, time).OnComplete(() => {
+        DOTween.To(() => fade_sprite_renderer.color, x =>
+        {
+            fade_sprite_renderer.color = x;
+        }, target_color, time).OnComplete(() => {
             if(alpha == 0f) {
                 fade_sprite_renderer.enabled = false;
             }
