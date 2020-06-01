@@ -640,7 +640,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 16
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 23
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -721,7 +721,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 17
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1706,11 +1706,10 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: 4024180071880046977, guid: 88b79bd7925859e4c9fb23200fc8441e,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 77315014286310789, guid: 88b79bd7925859e4c9fb23200fc8441e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -6746009699617350957, guid: 88b79bd7925859e4c9fb23200fc8441e,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 8569677685488744830, guid: 88b79bd7925859e4c9fb23200fc8441e,
       type: 3}
@@ -1721,10 +1720,11 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -6746009699617350957, guid: 88b79bd7925859e4c9fb23200fc8441e,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 77315014286310789, guid: 88b79bd7925859e4c9fb23200fc8441e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 174
     m_Data:
@@ -7184,11 +7184,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_RoomExit_01
       objectReference: {fileID: 0}
-    - target: {fileID: 3537539523123637385, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7319307725066741024, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7197,7 +7192,7 @@ PrefabInstance:
     - target: {fileID: 7319307725066741024, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.5
+      value: 9.97
       objectReference: {fileID: 0}
     - target: {fileID: 7319307725066741024, guid: 63e33564acd2a944c997f7a8f2b2cd2a,
         type: 3}
