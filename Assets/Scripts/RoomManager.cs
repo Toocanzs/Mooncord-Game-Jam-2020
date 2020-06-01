@@ -41,7 +41,12 @@ public class RoomManager : MonoBehaviour
     }
 
     public static Room GetActiveRoom() {
-        return instance.active_room_instance;
+        if (instance != null)
+        {
+            return instance.active_room_instance;
+        }
+
+        return null;
     }
 
     public static void ExitCurrentRoom(Room exited_room, RoomExit exit) {
