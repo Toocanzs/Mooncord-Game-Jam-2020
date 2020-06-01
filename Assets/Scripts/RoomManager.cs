@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class RoomManager : MonoBehaviour
     public float room_exit_fade_out_time;
     public float room_enter_fade_in_time;
     public List<GameObject> room_prefabs = new List<GameObject>();
-    public GameObject boss_room_prefab;
+
+    public string bossRoomSceneName;
     private Room active_room_instance;
     private int current_room_index;
     private static RoomManager instance;
@@ -79,11 +81,12 @@ public class RoomManager : MonoBehaviour
             }
         } else {
             // @BOSS ROOM...
-            if (!instance.boss_room_prefab) {
+            if (instance.bossRoomSceneName == null) {
                 Debug.LogWarning("No boss room prefab set!");
                 return;
             }
-            var boss_room = Instantiate<GameObject>(instance.boss_room_prefab);
+
+            SceneManager.LoadScene(instance.bossRoomSceneName, LoadSceneMode.Additive);
             var game_camera = GameCamera.GetCamera();
             // @Change first param to whatever fade-in-time you want
             game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
