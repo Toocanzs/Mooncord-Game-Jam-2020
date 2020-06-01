@@ -10,10 +10,6 @@ public class EnemyCharacter : Character
 
     void Start()
     {
-        // @TEMP:
-        var brain = GetComponent<AIBrain>();
-        brain.EnableBrain(true);
-        
     }
 
     // Update is called once per frame

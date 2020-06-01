@@ -32,6 +32,14 @@ public class AIBrain : MonoBehaviour
 
     public void SetEnableOnDistanceOrDamage() {
         enable_on_distance_or_damage = true;
+        var health_component = GetComponent<HealthComponent>();
+        health_component.on_health_change += OnHealth;
+    }
+
+    public void OnHealth(int difference) {
+        if(difference < 0f && !IsBrainEnabled()) {
+            EnableBrain(true);
+        }
     }
 
     public bool IsBrainEnabled() {

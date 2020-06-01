@@ -20,12 +20,18 @@ public class GameStartupSequence : MonoBehaviour
 
     public void StartGameIntroSequence() {
         ControlManager.SetInputEnabled(false);
+        // spawn room..
+        var room_setup_properties = new RoomSetupProperties();
+        room_setup_properties.enter_from = RoomRelativeDirection.NORTH;
+        RoomManager.CreateNextRoom(room_setup_properties);
+        // camera stuff..
         var game_camera = GameCamera.GetCamera();
         game_camera.StartFade(0f, 1f);
         var follow_component = game_camera.gameObject.GetComponent<CameraFollow>();
         var player = PlayerCharacter.GetPlayerCharacter();
         follow_component.JumpTo(player.gameObject.transform.position);
         follow_component.SetTarget(player.gameObject.transform);
+        // start sequence...
         NextSequenceItem();
     }
 
@@ -55,6 +61,15 @@ public class GameStartupSequence : MonoBehaviour
         var player_char = PlayerCharacter.GetPlayerCharacter();
         var follow_comp = game_cam.GetComponent<CameraFollow>();
         follow_comp.SetTarget(player_char.gameObject.transform);
+
+        // activate the room after 1s delay
+        var seq = DOTween.Sequence();
+        seq.SetDelay(1.0f).OnComplete(() => {
+            var active_room = RoomManager.GetActiveRoom();
+            active_room.ActivateRoom();
+            seq = null;
+        });
+
     }
 
     public void SkipSequence() {

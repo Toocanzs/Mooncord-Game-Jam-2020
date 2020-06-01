@@ -48,7 +48,7 @@ public class RoomManager : MonoBehaviour
         });
     }
 
-    private static void CreateNextRoom(RoomSetupProperties properties) {
+    public static void CreateNextRoom(RoomSetupProperties properties) {
         if(instance.room_prefabs.Count > instance.current_room_index) {
             var room_instance = Instantiate(instance.room_prefabs[instance.current_room_index]);
             var room_component = room_instance.GetComponent<Room>();
@@ -62,19 +62,20 @@ public class RoomManager : MonoBehaviour
             var player = PlayerCharacter.GetPlayerCharacter();
             camera_follow.JumpTo(player.gameObject.transform.position);
 
-            // start fade in
-            game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
-                // @TEMP: kinda jank but whatcha gonna do...
-                var sequence_manager = instance.gameObject.GetComponent<GameStartupSequence>();
-                if (!sequence_manager) {
-                    Debug.LogError("room manager couldnt find startup sequence manager!");
-                    return;
-                }
-                if (!sequence_manager.IsSequenceActive()) {
+            var sequence_manager = instance.gameObject.GetComponent<GameStartupSequence>();
+            if (!sequence_manager) {
+                Debug.LogError("room manager couldnt find startup sequence manager!");
+                return;
+            }
+            // check if the startup sequence is playing... if so don't fade in....
+            if (!sequence_manager.IsSequenceActive()) {
+                // start fade in
+                game_camera.StartFade(instance.room_exit_fade_out_time, 0f, () => {
+                    // @TEMP: kinda jank but whatcha gonna do...
                     ControlManager.SetInputEnabled(true);
                     room_component.ActivateRoom();
-                }
-            });
+                });
+            }
         }
 
     }
