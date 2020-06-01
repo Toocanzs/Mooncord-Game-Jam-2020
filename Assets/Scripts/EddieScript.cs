@@ -116,6 +116,9 @@ public class EddieScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         transform.DOScale(Vector3.zero, 0.5f);
+        GameCamera.GetCamera().StartFade(3.5f, 1f, () => {
+            throw new Exception("TODO: Add end scene here");
+        });
     }
 
     public void BeginJump()
